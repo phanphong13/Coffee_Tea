@@ -13,14 +13,14 @@
 				$result = $this->model->query("select * from `account` where email = '$email';", true);
 				if($result === false) die("Failed in controller_login 1");
 			
-				if(isset($_POST['signin'])) {
+				if(isset($_POST['login'])) {
 					// register
 				   if($result === NULL) {
 					   $alert = "Tên đăng nhập sai";
 				   } else {
-					   if($result[1]['password'] === $password) {
+					   if($result[0]['password'] === $password) {
 						   $_SESSION['email'] = $email;
-						   header("Location: index.php?key=home");
+						   header("Location: home.php");
 					   } else {
 						   $alert = "Mật khẩu sai";
 					   }

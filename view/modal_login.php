@@ -4,7 +4,7 @@
                                 <div class="auth-form">
                                     <div class="auth-form__container">
 
-                                        <form action="home.php" method="post" id="login-form">
+                                        <form action="" method="post" id="login-form">
                                             <?php 
                                                 new controller_login();
                                             ?>
@@ -42,7 +42,7 @@
                         
                                             <div class="auth-form__controls">
                                                 <div class="btn auth-form__controls-back">TRỞ LẠI</div>
-                                                <button class="btn btn--primary" name="signin">ĐĂNG NHẬP</button>
+                                                <button class="btn btn--primary" name="login">ĐĂNG NHẬP</button>
                                             </div>
                                             
                                         </form>
