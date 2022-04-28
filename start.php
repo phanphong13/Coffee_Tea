@@ -11,6 +11,7 @@
         include "./app/controller.php";
         include "./app/model.php";
         include "./controller/controller_login.php";
+        include "./controller/controller_register.php";
         include "./controller/controller_category.php";
         include "./controller/controller_product.php";
 
@@ -38,12 +39,8 @@
 
                         <?php 
                             include './view/modal_login.php';
-                        ?>
-
-                        <?php 
                             include './view/modal_register.php';
                         ?>
-
                     </div>
                     
                 </div>

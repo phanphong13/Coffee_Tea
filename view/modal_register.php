@@ -5,7 +5,7 @@
                                     <div class="auth-form__container">
                                         <form action="" method="post" id="register-form">
                                             <?php 
-                                                new controller_login();
+                                                new controller_register();
                                             ?>
                                             <div class="auth-form__header">
                                                 <h3 class="auth-form__heading">
@@ -44,6 +44,7 @@
                                                 <div class="btn auth-form__controls-back">TRỞ LẠI</div>
                                                 <button class="btn btn--primary" name="signup">ĐĂNG KÍ</button>
                                             </div>
+                                            
 
                                         </form>
 
