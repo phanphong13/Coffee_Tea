@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <title>Coffee & Tea</title>
     <?php 
-        include "./view/head.php";
+        include './view/head.php';
     ?>
-    
 </head>
 <body>
+    <?php 
+        include "./app/controller.php";
+        include "./app/model.php";
+        include "./controller/controller_login.php";
+        include "./controller/controller_category.php";
+        include "./controller/controller_product.php";
+
+    ?>
     <div class="app">
-        <!-- header -->
-        <?php  
-            include "./view/header.php";
-        ?>
+        <div id="header">
+            <div class="header-top">
+                <div class="h-left">
+                    <img src="./Assets/Img/Header/delivery.png" alt="">
+                </div>
+                <div class="h-center">
+                    <a href="" class="h-center-logo" >
+                     <img src="./Assets/Img/Header/logo-main.jpg" alt="" class = "h-center-logo-img">
+                    </a>  
+                </div>
+                <div class="h-right">
+
+                    <div class="h-right__text">
+                        
+                        <div class="h-right__text-text h-right__text-login">Đăng nhập</div>
+                        <div class="h-right__text-text h-right__text-register">Đăng kí</div>
+                        
+
+                        <div for="" class="modal__overlay-login"></div>
+
+                        <?php 
+                            include './view/modal_login.php';
+                        ?>
+
+                        <?php 
+                            include './view/modal_register.php';
+                        ?>
+
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="header-nav">
+                <ul class="h-nav__list">
+                    <li class="h-nav__list-item">
+                        <a href="" class="h-nav__list-item-link">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="h-nav__list-item">
+                        <a href="" class="h-nav__list-item-link">
+                            Cà phê
+                        </a>
+                        </li>
+                    <li class="h-nav__list-item">
+                        <a href="" class="h-nav__list-item-link">
+                            Trà
+                        </a>
+                    </li>
+                    <li class="h-nav__list-item">
+                        <a href="" class="h-nav__list-item-link">
+                            Sản phẩm
+                        </a>
+                    </li>
+                    <li class="h-nav__list-item">
+                        <a href="" class="h-nav__list-item-link">
+                            Giới thiệu
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
     
         <div id="container">
             <!-- Slidershow -->
@@ -73,7 +138,10 @@
                                     <li class="category__item category__item-active">
                                         <a href="#" class="category__link category__link-active">Tất cả</a>
                                     </li>
-                                    <li class="category__item">
+                                    <?php 
+                                        new controller_category();
+                                    ?>
+                                    <!-- <li class="category__item">
                                         <a href="#" class="category__link">Cà phê</a>
                                     </li>
                                     <li class="category__item">
@@ -81,7 +149,7 @@
                                     </li>
                                     <li class="category__item">
                                         <a href="#" class="category__link">Trà chanh</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
@@ -131,7 +199,10 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col l-3 m-6 c-10">
+                                <?php 
+                                    new controller_product();
+                                ?>
+                                <!-- <div class="col l-3 m-6 c-10">
                                     <div class="body__product">
                                         <div class="body__product-img">
                                             <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
@@ -143,83 +214,13 @@
                                             44.182đ
                                         </span>
                                         <button class="body__product-btn">
-                                            <div class="body__product-btn-order">
+                                            <div class="body__product-btn-order body__product-btn-order-disable">
                                                 ĐẶT HÀNG
                                             </div>
                                         </button>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col l-3 m-6 c-10">
-                                    <div class="body__product">
-                                        <div class="body__product-img">
-                                            <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
-                                        </div>
-                                        <span class="body__product-heading">
-                                            Ngọc viễn đông
-                                        </span>
-                                        <span class="body__product-price">
-                                            44.182đ
-                                        </span>
-                                        <button class="body__product-btn">
-                                            <div class="body__product-btn-order">
-                                                ĐẶT HÀNG
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div><div class="col l-3 m-6 c-10">
-                                    <div class="body__product">
-                                        <div class="body__product-img">
-                                            <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
-                                        </div>
-                                        <span class="body__product-heading">
-                                            Ngọc viễn đông
-                                        </span>
-                                        <span class="body__product-price">
-                                            44.182đ
-                                        </span>
-                                        <button class="body__product-btn">
-                                            <div class="body__product-btn-order">
-                                                ĐẶT HÀNG
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col l-3 m-6 c-10">
-                                    <div class="body__product">
-                                        <div class="body__product-img">
-                                            <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
-                                        </div>
-                                        <span class="body__product-heading">
-                                            Ngọc viễn đông
-                                        </span>
-                                        <span class="body__product-price">
-                                            44.182đ
-                                        </span>
-                                        <button class="body__product-btn">
-                                            <div class="body__product-btn-order">
-                                                ĐẶT HÀNG
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div><div class="col l-3 m-6 c-10">
-                                    <div class="body__product">
-                                        <div class="body__product-img">
-                                            <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
-                                        </div>
-                                        <span class="body__product-heading">
-                                            Ngọc viễn đông
-                                        </span>
-                                        <span class="body__product-price">
-                                            44.182đ
-                                        </span>
-                                        <button class="body__product-btn">
-                                            <div class="body__product-btn-order">
-                                                ĐẶT HÀNG
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
                                 
                                 
                                 
@@ -230,6 +231,8 @@
             </div>
         </div>
 
+
+         
         <!-- footer -->
         <?php 
             include "./view/footer.php";
@@ -240,7 +243,7 @@
     
     <!-- modal order -->
     <?php 
-        include "./view/modal.php";
+        include './view/modal.php';
     ?>
 
     <script src="./main.js"></script>

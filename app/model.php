@@ -70,6 +70,20 @@
             return $this->conn->query($sql);
         }
 
+        function getArray($table) {
+            if(!is_string($table)) 
+                return false;
+            $sql = "SELECT * FROM `$table`;";
+            if($result = $this->conn->query($sql)) {
+                $data = null;
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row;
+                }
+                return $data;
+            } 
+            return false;
+        }
+
         function query($sql, $return = false) {
             $return = (bool)$return;
             if(!is_string($sql) || !is_bool($return)) 

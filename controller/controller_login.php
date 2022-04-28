@@ -1,10 +1,10 @@
 <?php
+
 	class controller_login extends controller {
-		
+
 		function __construct()
 		{
 			parent::__construct();
-
 			if(isset($_POST['email'])) { 
 				$email = $this->model->escape_string($_POST['email']);
 				$password = $this->model->escape_string($_POST['password']);
@@ -25,16 +25,18 @@
 					} else {
 						$alert = "Tên đăng kí đã tồn tại";
 					}
-				} else if(isset($_POST['signin'])) { // sign in
-					if($result === NULL) {
-						$alert = "Tên đăng nhập sai";
-					} else {
-						if($result[0]['password'] == $password) {
-							header("Location: home.php");
-						} else {
-							$alert = "Mật khẩu sai";
-						}
-					}
+				} else if(isset($_POST['signin'])) {
+					 // sign in
+					// if($result === NULL) {
+					// 	$alert = "Tên đăng nhập sai";
+					// } else {
+					// 	if($result[0]['password'] == $password) {
+					// 		$_SESSION['email'] = $email;
+					// 		header("Location: index.php?key=home");
+					// 	} else {
+					// 		$alert = "Mật khẩu sai";
+					// 	}
+					// }
 				} 	
 			}
 		}
