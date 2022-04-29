@@ -13,9 +13,6 @@
                 <span class="header__user-name">
 
                     <?php 
-                        // if (isset($_POST['email'])) {
-                        //     echo $_POST['email'];
-                        // }
                         session_start();
                         if (isset($_SESSION['email'])) {
                             echo $_SESSION['email'];
@@ -25,7 +22,7 @@
                 <div class="header__user-img">
                     <i class="fa-solid fa-circle-user"></i>
                     <div class="header__user-logout">
-                        <a href="start.php" class="header__user-logout-link">
+                        <a href="index.php" class="header__user-logout-link">
                             <div class="header__user-logout-icon">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                             </div>
