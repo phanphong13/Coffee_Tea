@@ -23,7 +23,8 @@
 					} else {
 						$alert = "Tên đăng kí đã tồn tại";
 					}
-					echo "<script type='text/javascript'>alert('$alert');</script>";
+					echo "<script type='text/javascript'>alert('$alert');
+					window.location.replace('index.php');</script>";
 
 				}
 				

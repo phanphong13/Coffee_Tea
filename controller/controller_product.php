@@ -15,7 +15,7 @@
                         <span class="body__product-heading">' . $product[$i]['title'] . '</span>
                         <span class="body__product-price">' . $product[$i]['price'] . 'đ</span>
                         <button class="body__product-btn">
-                            <div class="body__product-btn-order body__product-btn-order-disable">
+                            <div class="body__product-btn-order">
                                 ĐẶT HÀNG
                             </div>
                         </button>

@@ -84,12 +84,6 @@
 
     </div>
     
-    
-    <!-- modal order -->
-    <?php 
-        include './view/modal.php';
-    ?>
-
     <script src="./main.js"></script>
     <script>
         validator('#register-form');

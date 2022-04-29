@@ -25,7 +25,8 @@
 						   $alert = "Mật khẩu sai";
 					   }
 				   }
-				   echo "<script type='text/javascript'>alert('$alert');</script>";
+				   echo "<script type='text/javascript'>alert('$alert');
+				   window.location.replace('index.php');</script>";
 
 			   } 
 
