@@ -18,48 +18,70 @@ var tru = document.querySelector('.product__order-number-item-left');
 var cong = document.querySelector('.product__order-number-item-right');
 var price = document.querySelector('.product__order-sum-price');
 
-var sum = parseInt(number.innerText, 10);
-var sumPrice = parseInt(price.innerText);
-var sumPrice_old = parseInt(price.innerText);
+var sum;
+var sumPrice;
+var sumPrice_old;
+if(number) {
+    sum = parseInt(number.innerText, 10);
+}
+if(price) {
+    sumPrice = parseInt(price.innerText);
+
+}
+if(price) {
+    sumPrice_old = parseInt(price.innerText);
+}
 
 var sizeM = document.querySelector('.product__order-size-M');
 var sizeL = document.querySelector('.product__order-size-L');
 
-sizeM.onclick = function() {
-    if (sizeL.classList.contains('btn--primary')) {
-        sizeL.classList.remove('btn--primary');
-        sizeM.classList.add('btn--primary');
-        sumPrice_old -= 10;
-        sumPrice = sumPrice - 10 * sum;
+if(sizeM) {
+    sizeM.onclick = function() {
+        if (sizeL.classList.contains('btn--primary')) {
+            sizeL.classList.remove('btn--primary');
+            sizeM.classList.add('btn--primary');
+            sumPrice_old -= 10;
+            sumPrice = sumPrice - 10 * sum;
+            price.innerText = sumPrice + '.000 đ';
+        }
+    }
+
+}
+
+if(sizeL) {
+    sizeL.onclick = function() {
+        if (sizeM.classList.contains('btn--primary')) {
+            sizeM.classList.remove('btn--primary');
+            sizeL.classList.add('btn--primary');
+            sumPrice_old += 10;
+            sumPrice = sumPrice + 10 * sum;
+            price.innerText = sumPrice + '.000 đ';
+        }
+    }
+
+}
+
+if(tru) {
+    tru.onclick = function() {
+        if (sum>0) {
+            sum = sum-1;
+            sumPrice = sumPrice - sumPrice_old;
+        }
+        number.innerText = sum;
         price.innerText = sumPrice + '.000 đ';
     }
+
 }
 
-sizeL.onclick = function() {
-    if (sizeM.classList.contains('btn--primary')) {
-        sizeM.classList.remove('btn--primary');
-        sizeL.classList.add('btn--primary');
-        sumPrice_old += 10;
-        sumPrice = sumPrice + 10 * sum;
+if(cong) {
+    cong.onclick = function() {
+        sum = sum + 1;
+        sumPrice = sumPrice + sumPrice_old;
+    
+        number.innerText = sum;
         price.innerText = sumPrice + '.000 đ';
     }
-}
 
-tru.onclick = function() {
-    if (sum>0) {
-        sum = sum-1;
-        sumPrice = sumPrice - sumPrice_old;
-    }
-    number.innerText = sum;
-    price.innerText = sumPrice + '.000 đ';
-}
-
-cong.onclick = function() {
-    sum = sum + 1;
-    sumPrice = sumPrice + sumPrice_old;
-
-    number.innerText = sum;
-    price.innerText = sumPrice + '.000 đ';
 }
 // btn-order
 var productBtnOrder = document.querySelectorAll('.body__product-btn-order');
@@ -68,33 +90,39 @@ var modalOrder = document.querySelector('.modal');
 
 var btnClose = document.querySelector('.product__order-info-icon');
 
-for(var i = 0; i < productBtnOrder.length; i++) {
-    if(productBtnOrder[i].classList.contains('body__product-btn-order-disable')) {
+if(productBtnOrder) {
+    for(var i = 0; i < productBtnOrder.length; i++) {
+        if(productBtnOrder[i].classList.contains('body__product-btn-order-disable')) {
+    
+            productBtnOrder[i].onclick = function() {
+            }
+        } else {
+            
+            productBtnOrder[i].onclick = function() {
+                modalOrder.style.display = 'block';
+                overlayOrder.style.display = 'block';
+            }
+        }
+    
+    }
 
-        productBtnOrder[i].onclick = function() {
-            console.log(123);
-        }
-    } else {
-        
-        productBtnOrder[i].onclick = function() {
-            modalOrder.style.display = 'block';
-            overlayOrder.style.display = 'block';
-        }
+}
+
+if(overlayOrder) {
+    overlayOrder.onclick = function() {
+        overlayOrder.style.display = 'none';
+        modalOrder.style.display = 'none';
     }
 
 }
 
 
-overlayOrder.onclick = function() {
-    overlayOrder.style.display = 'none';
-    modalOrder.style.display = 'none';
-}
+if (btnClose) {
+    btnClose.onclick = function() {
+        overlayOrder.style.display = 'none';
+        modalOrder.style.display = 'none';
+    }
 
-
-
-btnClose.onclick = function() {
-    overlayOrder.style.display = 'none';
-    modalOrder.style.display = 'none';
 }
 
 
@@ -165,6 +193,7 @@ function validator(formSelector) {
     }
 
     var formRules = {};
+    
 
     /**
      * có lỗi return `error message`
@@ -276,6 +305,10 @@ function validator(formSelector) {
     }
     
 }
+
+
+
+
 
 
 
