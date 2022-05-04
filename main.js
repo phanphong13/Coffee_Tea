@@ -305,11 +305,3 @@ function validator(formSelector) {
     }
     
 }
-
-
-
-
-
-
-
-

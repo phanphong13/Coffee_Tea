@@ -50,16 +50,16 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`title`, `link_img`, `price`, `category_id`) VALUES
 ('Hồng trà chanh đá', './Assets/Img/Products/TS/hồng trà chanh.png', 39.273, 1),
-('Hồng trà đác cam đá xay', './Assets/Img/Products/TS/hồng trà đác cam.png', 68.727, 1),
-('Hồng trà sữa đá', './Assets/Img/Products/TS/hồng trà sữa.png', 44.182, 1),
+('Hồng trà đác cam đá xay', './Assets/Img/Products/TS/hồng trà đác cam.png', 68.727, 2),
+('Hồng trà sữa đá', './Assets/Img/Products/TS/hồng trà sữa.png', 44.182, 3),
 ('Ngọc viễn đông đá', './Assets/Img/Products/TS/NgocVienDong.png', 44.182, 1),
-('Trà đào đá xay', './Assets/Img/Products/TS/trà đào đá xay.png', 63.818, 1),
-('Trà đào đá', './Assets/Img/Products/TS/trà đào đá.png', 49.091, 1),
+('Trà đào đá xay', './Assets/Img/Products/TS/trà đào đá xay.png', 63.818, 2),
+('Trà đào đá', './Assets/Img/Products/TS/trà đào đá.png', 49.091, 3),
 ('Trà nhãn lài', './Assets/Img/Products/TS/trà nhãn lài.png', 49.091, 1),
-('Trà đào sữa', './Assets/Img/Products/TS/trà đào sữa.png', 39.273, 1),
-('Trà nhãn xen', './Assets/Img/Products/TS/trà nhãn lài.png', 49.091, 1),
+('Trà đào sữa', './Assets/Img/Products/TS/trà đào sữa.png', 39.273, 2),
+('Trà nhãn xen', './Assets/Img/Products/TS/trà nhãn lài.png', 49.091, 3),
 ('Trà ô long dâu', './Assets/Img/Products/TS/trà ô long dâu.png', 49.091, 1),
-('Trà ô long mãng cầu', './Assets/Img/Products/TS/trà ô long mãng cầu.png', 49.091, 1);
+('Trà ô long mãng cầu', './Assets/Img/Products/TS/trà ô long mãng cầu.png', 49.091, 2);
 
 
 

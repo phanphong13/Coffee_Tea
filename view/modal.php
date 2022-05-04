@@ -69,6 +69,12 @@
                                                 ĐẶT HÀNG
                                             </a>
                                         </button>
+
+                                        <button class="product__order-order-addCart">
+                                            <a href="" class=" product__order-order-active">
+                                                THÊM VÀO GIỎ HÀNG
+                                            </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
