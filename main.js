@@ -13,116 +13,108 @@ setInterval(function() {
 
 
 // order
-var number = document.querySelector('.product__order-number-item-center');
-var tru = document.querySelector('.product__order-number-item-left');
-var cong = document.querySelector('.product__order-number-item-right');
-var price = document.querySelector('.product__order-sum-price');
+var number = document.querySelectorAll('.product__order-number-item-center');
+var tru = document.querySelectorAll('.product__order-number-item-left');
+var cong = document.querySelectorAll('.product__order-number-item-right');
+var price = document.querySelectorAll('.product__order-sum-price');
 
-var sum;
-var sumPrice;
-var sumPrice_old;
+
+
+var sum = new Array();
+var sumPrice = new Array();
+var sumPrice_old = new Array();
 if(number) {
-    sum = parseInt(number.innerText, 10);
-}
-if(price) {
-    sumPrice = parseInt(price.innerText);
-
-}
-if(price) {
-    sumPrice_old = parseInt(price.innerText);
+    for (var i = 0; i < number.length; i++ ) (function(i){ 
+        sum[i] = parseInt(number[i].innerText, 10);
+    })(i);
 }
 
-var sizeM = document.querySelector('.product__order-size-M');
-var sizeL = document.querySelector('.product__order-size-L');
+if(price) {
+    for (var i = 0; i < price.length; i++ ) (function(i){ 
+        sumPrice[i] = parseInt(price[i].innerText);
+        sumPrice_old[i] = parseInt(price[i].innerText);
+
+    })(i);
+}
+
+
+var sizeM = document.querySelectorAll('.product__order-size-M');
+var sizeL = document.querySelectorAll('.product__order-size-L');
 
 if(sizeM) {
-    sizeM.onclick = function() {
-        if (sizeL.classList.contains('btn--primary')) {
-            sizeL.classList.remove('btn--primary');
-            sizeM.classList.add('btn--primary');
-            sumPrice_old -= 10;
-            sumPrice = sumPrice - 10 * sum;
-            price.innerText = sumPrice + '.000 đ';
+    for (var i = 0; i < sizeM.length; i++ ) (function(i){ 
+        sizeM[i].onclick = function() {
+            if (sizeL[i].classList.contains('btn--primary')) {
+                sizeL[i].classList.remove('btn--primary');
+                sizeM[i].classList.add('btn--primary');
+                sumPrice_old[i] -= 10;
+                sumPrice[i] = sumPrice[i] - 10 * sum[i];
+                price[i].innerText = sumPrice[i] + '.000 đ';
+            }
         }
-    }
 
-}
-
-if(sizeL) {
-    sizeL.onclick = function() {
-        if (sizeM.classList.contains('btn--primary')) {
-            sizeM.classList.remove('btn--primary');
-            sizeL.classList.add('btn--primary');
-            sumPrice_old += 10;
-            sumPrice = sumPrice + 10 * sum;
-            price.innerText = sumPrice + '.000 đ';
+        sizeL[i].onclick = function() {
+            if (sizeM[i].classList.contains('btn--primary')) {
+                sizeM[i].classList.remove('btn--primary');
+                sizeL[i].classList.add('btn--primary');
+                sumPrice_old[i] += 10;
+                sumPrice[i] = sumPrice[i] + 10 * sum[i];
+                price[i].innerText = sumPrice[i] + '.000 đ';
+            }
         }
-    }
 
-}
-
-if(tru) {
-    tru.onclick = function() {
-        if (sum>0) {
-            sum = sum-1;
-            sumPrice = sumPrice - sumPrice_old;
+        tru[i].onclick = function() {
+            if (sum[i]>0) {
+                sum[i] = sum[i]-1;
+                sumPrice[i] = sumPrice[i] - sumPrice_old[i];
+            }
+            number[i].innerText = sum[i];
+            price[i].innerText = sumPrice[i] + '.000 đ';
         }
-        number.innerText = sum;
-        price.innerText = sumPrice + '.000 đ';
-    }
 
+        cong[i].onclick = function() {
+            sum[i] = sum[i] + 1;
+            sumPrice[i] = sumPrice[i] + sumPrice_old[i];
+        
+            number[i].innerText = sum[i];
+            price[i].innerText = sumPrice[i] + '.000 đ';
+        }
+    })(i);
 }
 
-if(cong) {
-    cong.onclick = function() {
-        sum = sum + 1;
-        sumPrice = sumPrice + sumPrice_old;
-    
-        number.innerText = sum;
-        price.innerText = sumPrice + '.000 đ';
-    }
 
-}
 // btn-order
-var productBtnOrder = document.querySelectorAll('.body__product-btn-order');
-var overlayOrder = document.querySelector('.modal__overlay');
-var modalOrder = document.querySelector('.modal');
+var productBtnOrders = document.querySelectorAll('.body__product-btn-order');
+var overlayOrders = document.querySelectorAll('.modal__overlay');
+var modalOrders = document.querySelectorAll('.modal');
 
-var btnClose = document.querySelector('.product__order-info-icon');
+var btnCloses = document.querySelectorAll('.product__order-info-icon');
 
-if(productBtnOrder) {
-    for(var i = 0; i < productBtnOrder.length; i++) {
-        if(productBtnOrder[i].classList.contains('body__product-btn-order-disable')) {
-    
-            productBtnOrder[i].onclick = function() {
-            }
-        } else {
-            
-            productBtnOrder[i].onclick = function() {
-                modalOrder.style.display = 'block';
-                overlayOrder.style.display = 'block';
-            }
+if(productBtnOrders) {
+    for (var i = 0; i < productBtnOrders.length; i++ ) (function(i){ 
+        productBtnOrders[i].onclick = function() {
+            overlayOrders[i].style.display = 'block';
+            modalOrders[i].style.display = 'block';
         }
-    
-    }
-
+      })(i);
 }
 
-if(overlayOrder) {
-    overlayOrder.onclick = function() {
-        overlayOrder.style.display = 'none';
-        modalOrder.style.display = 'none';
-    }
-
+if (overlayOrders) {
+    for (var i = 0; i < overlayOrders.length; i++ ) (function(i) {
+        overlayOrders[i].onclick = function() {
+            overlayOrders[i].style.display = 'none';
+            modalOrders[i].style.display = 'none';
+        }
+    })(i);
 }
 
-
-if (btnClose) {
-    btnClose.onclick = function() {
-        overlayOrder.style.display = 'none';
-        modalOrder.style.display = 'none';
-    }
-
+if (btnCloses) {
+    for (var i = 0; i < btnCloses.length; i++ ) (function(i) {
+        btnCloses[i].onclick = function() {
+            overlayOrders[i].style.display = 'none';
+            modalOrders[i].style.display = 'none';
+        }
+    })(i);
 }
 
 
@@ -144,32 +136,42 @@ var btnBack = document.querySelectorAll('.auth-form__controls-back');
 
 
 // mo login
-navLogin.onclick = function() {
-    modal__overlay__login.setAttribute("style", "display: block;");
-    modal__login.setAttribute("style", "display: block;");
+if (navLogin) {
+    navLogin.onclick = function() {
+        modal__overlay__login.setAttribute("style", "display: block;");
+        modal__login.setAttribute("style", "display: block;");
+    }
 }
 
 // mo register
-navRegister.onclick = function() {
-    modal__overlay__login.setAttribute("style", "display: block;");
-    modal__register.setAttribute("style", "display: block;");
+if (navRegister) {
+    navRegister.onclick = function() {
+        modal__overlay__login.setAttribute("style", "display: block;");
+        modal__register.setAttribute("style", "display: block;");
+    }
 }
 
 // click overlay => out
-modal__overlay__login.onclick = function() {
-    modal__overlay__login.setAttribute("style", "display: none;");
-    modal__login.setAttribute("style", "display: none;");
-    modal__register.setAttribute("style", "display: none;");
+if (modal__overlay__login) {
+    modal__overlay__login.onclick = function() {
+        modal__overlay__login.setAttribute("style", "display: none;");
+        modal__login.setAttribute("style", "display: none;");
+        modal__register.setAttribute("style", "display: none;");
+    }
 }
 
-switch_register.onclick = function() {
-    modal__login.setAttribute("style", "display: none;");
-    modal__register.setAttribute("style", "display: block;");
+if (switch_register) {
+    switch_register.onclick = function() {
+        modal__login.setAttribute("style", "display: none;");
+        modal__register.setAttribute("style", "display: block;");
+    }
 }
 
-switch_login.onclick = function() {
-    modal__register.setAttribute("style", "display: none;");
-    modal__login.setAttribute("style", "display: block;");
+if (switch_login) {
+    switch_login.onclick = function() {
+        modal__register.setAttribute("style", "display: none;");
+        modal__login.setAttribute("style", "display: block;");
+    }
 }
 
 for(var i = 0; i<btnBack.length; i++) {

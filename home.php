@@ -134,6 +134,7 @@
                                                 </button>
                                             </div>
                                         </div>';
+
                                     }
                                 ?>
                                 
@@ -153,6 +154,9 @@
     <!-- modal order -->
     <?php 
         include "./view/modal.php";
+        for ($i = 0; $i < count($products); $i++) {
+            includeModal($products, $i);
+        }
     ?>
 
     <script src="./main.js"></script>
