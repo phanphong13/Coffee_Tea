@@ -945,6 +945,10 @@ input[name = "show-list"] {
     border-radius: 4px;
 }
 
+.body-top-form {
+    display: contents;
+}
+
 .body-xs {
     width: 50%;
     display: flex;
@@ -1002,6 +1006,7 @@ input[name = "show-list"] {
 }
 
 .body-xs__input-btn {
+    border: none;
     width: 35px;
     background-color: var(--primary-color);
     cursor: pointer;

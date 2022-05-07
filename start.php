@@ -147,7 +147,7 @@
                         </div>
                         <div class="col l-10 m-9 c-10">
                             <div class="body-top">
-                                <!-- <form action="" method="POST"> -->
+                                <form action="" method="POST" class = "body-top-form">
                                     <div class="body-xs body-xs-left">
                                         <label class="body-xs__header">
                                             Theo giá
@@ -168,15 +168,15 @@
                                         </lable>
                                         <div class="body-xs__input">
                                             <input type="text" class="body-xs__input-input" placeholder="Tìm kiếm"> <!--type submit-->
-                                            <div class="body-xs__input-btn">
+                                            <button class="body-xs__input-btn">
                                                 <div class="body-xs__input-icon">
                                                     <i class="fa-solid fa-magnifying-glass"></i>
                                                 </div>
-                                            </div>
+                                            </button>
                                         </div>
                                         
                                     </div>
-                                <!-- </form> -->
+                                </form>
                             </div>
                             
                             <div class="row">
