@@ -147,17 +147,21 @@
                         </div>
                         <div class="col l-10 m-9 c-10">
                             <div class="body-top">
-                                <form action="" method="POST" class = "body-top-form">
+                                <?php 
+                                    if (isset($_GET['sort'])) {
+                                        $sort = $_GET['sort'];
+                                    }
+                                ?>
+                                <form action="" method="GET" class = "body-top-form">
                                     <div class="body-xs body-xs-left">
                                         <label class="body-xs__header">
                                             Theo giá
                                         </label>
 
                                         <select id="body-xs-price" class="body-xs__select" name="sort"> <!-- add name-->
-                                            <?php /*if (isset($sort) && $sort == 'a') echo "selected=\"selected\""; */?>
-                                            <option value="a">Không lựa chọn</option>
-                                            <option value="b">Từ thấp đến cao</option>
-                                            <option value="c">Từ cao đến thấp</option>
+                                            <option value="">Không lựa chọn</option>
+                                            <option <?php if (isset($sort) && $sort == 'b') echo "selected=\"selected\""; ?> value="b">Từ thấp đến cao</option>
+                                            <option <?php if (isset($sort) && $sort == 'c') echo "selected=\"selected\""; ?> value="c">Từ cao đến thấp</option>
                                         </select>
 
                                     </div>
@@ -167,7 +171,7 @@
                                             Tìm kiếm
                                         </lable>
                                         <div class="body-xs__input">
-                                            <input type="text" class="body-xs__input-input" placeholder="Tìm kiếm"> <!--type submit-->
+                                            <input type="text" name="search" class="body-xs__input-input" placeholder="Tìm kiếm"> <!--type submit-->
                                             <button class="body-xs__input-btn">
                                                 <div class="body-xs__input-icon">
                                                     <i class="fa-solid fa-magnifying-glass"></i>
