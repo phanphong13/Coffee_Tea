@@ -137,10 +137,10 @@
                                         <a href="?id_category=1" class="category__link"">Cà phê</a>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=2" class="category__link">Trà sữa</a>
+                                        <a href="?id_category=2" class="category__link">Trà Sữa & Trà Chanh</a>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=3" class="category__link">Trà chanh</a>
+                                        <a href="?id_category=3" class="category__link">Nước Trái Cây</a>
                                     </li>
                                 </ul>
                             </nav>

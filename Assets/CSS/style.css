@@ -1066,12 +1066,17 @@ input[name = "show-list"] {
 }
 
 .body__product-heading {
-    display: block;
+    display: -webkit-box;
     text-align: center;
+    line-height: 25px;
     font-size: 2rem;
     margin: 20px;
     font-weight: 500;
     color: var(--black-color);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .body__product-price {
