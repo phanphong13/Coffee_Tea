@@ -10,14 +10,14 @@
         </div>
         <div class="h-right">
             <div class="header__user">
-                <span class="header__user-name">
+                <!-- <span class="header__user-name">
 
                     <?php 
                         if (isset($_SESSION['email'])) {
                             echo $_SESSION['email'];
                         }
                     ?>
-                </span>
+                </span> -->
                 <div class="header__user-img">
                     <i class="fa-solid fa-circle-user"></i>
                     <div class="header__user-logout">

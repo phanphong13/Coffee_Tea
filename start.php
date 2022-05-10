@@ -129,12 +129,12 @@
                                 </label>
 
                                 <ul class="category__list">
-                                    <li class="category__item category__item-active">
+                                    <li class="category__item">
                                         <a href="index.php?controller=start" class="category__link category__link-active">Tất cả</a>
                                     </li>
                                     
                                     <li class="category__item">
-                                        <a href="?id_category=1" class="category__link"">Cà phê</a>
+                                        <a href="?id_category=1" class="category__link">Cà phê</a>
                                     </li>
                                     <li class="category__item">
                                         <a href="?id_category=2" class="category__link">Trà Sữa & Trà Chanh</a>
@@ -203,6 +203,9 @@
                                         </div>';
                                     }
                                 ?>
+                                <!-- <div class="col l-12 m-12 c-12">
+                                    <span class = "body__product-noProduct">Không có sản phẩm bạn tìm kiếm</span>
+                                </div> -->
                                 
                             </div>
                         </div>

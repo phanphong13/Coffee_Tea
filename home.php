@@ -74,7 +74,7 @@
                                     </li>
                                     
                                     <li class="category__item">
-                                        <a href="?id_category=1" class="category__link"">Cà phê</a>
+                                        <a href="?id_category=1" class="category__link">Cà phê</a>
                                     </li>
                                     <li class="category__item">
                                         <a href="?id_category=2" class="category__link">Trà Sữa & Trà Chanh</a>
@@ -125,25 +125,28 @@
                             
                             <div class="row">
                                 <?php 
-                                    for ($i = 0; $i < count($products); $i++) {
+                                    // for ($i = 0; $i < count($products); $i++) {
                 
-                                        echo '<div class="col l-3 m-6 c-10">
-                                            <div class="body__product">
-                                                <div class="body__product-img">
-                                                    <img src="'. $products[$i]['link_img'] . '" alt="">
-                                                </div>
-                                                <span class="body__product-heading">' . $products[$i]['title'] . '</span>
-                                                <span class="body__product-price">' . $products[$i]['price'] . 'đ</span>
-                                                <button class="body__product-btn">
-                                                    <div class="body__product-btn-order">
-                                                        ĐẶT HÀNG
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>';
+                                    //     echo '<div class="col l-3 m-6 c-10">
+                                    //         <div class="body__product">
+                                    //             <div class="body__product-img">
+                                    //                 <img src="'. $products[$i]['link_img'] . '" alt="">
+                                    //             </div>
+                                    //             <span class="body__product-heading">' . $products[$i]['title'] . '</span>
+                                    //             <span class="body__product-price">' . $products[$i]['price'] . 'đ</span>
+                                    //             <button class="body__product-btn">
+                                    //                 <div class="body__product-btn-order">
+                                    //                     ĐẶT HÀNG
+                                    //                 </div>
+                                    //             </button>
+                                    //         </div>
+                                    //     </div>';
 
-                                    }
+                                    // }
                                 ?>
+                                <div class="col l-12 m-12 c-12">
+                                    <span class = "body__product-noProduct">Không có sản phẩm bạn tìm kiếm</span>
+                                </div>
                                 
                             </div>
                         </div>
