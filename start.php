@@ -44,8 +44,9 @@
             </div>
             <div class="header-nav">
                 <ul class="h-nav__list">
+                                  
                     <li class="h-nav__list-item">
-                        <a href="" class="h-nav__list-item-link">
+                        <a href="" class="h-nav__list-item-link h-nav__list-item-link-main">
                             Trang chủ
                         </a>
                     </li>
@@ -129,18 +130,24 @@
                                 </label>
 
                                 <ul class="category__list">
+
+                                    <?php 
+                                        if (isset($_GET['id_category'])) {
+                                            $id_category = $_GET['id_category'];
+                                        }
+                                    ?>
                                     <li class="category__item">
-                                        <a href="index.php?controller=start" class="category__link category__link-active">Tất cả</a>
+                                        <a href="index.php?controller=start" class="category__link <?php if (!isset($id_category)) echo "category__link-active" ?>">Tất cả</a>
                                     </li>
                                     
                                     <li class="category__item">
-                                        <a href="?id_category=1" class="category__link">Cà phê</a>
+                                        <a href="?id_category=1" class="category__link <?php if (isset($id_category) && $id_category == 1) echo "category__link-active" ?> ">Cà phê</a>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=2" class="category__link">Trà Sữa & Trà Chanh</a>
+                                        <a href="?id_category=2" class="category__link <?php if (isset($id_category) && $id_category == 2) echo "category__link-active" ?> ">Trà Sữa & Trà Chanh</a>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=3" class="category__link">Nước Trái Cây</a>
+                                        <a href="?id_category=3" class="category__link <?php if (isset($id_category) && $id_category == 3) echo "category__link-active" ?> ">Nước Trái Cây</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -185,6 +192,7 @@
                             
                             <div class="row">
                                 <?php 
+                                    if (count($products) > 0) {
                                     for ($i = 0; $i < count($products); $i++) {
                 
                                         echo '<div class="col l-3 m-6 c-10">
@@ -201,11 +209,14 @@
                                                 </button>
                                             </div>
                                         </div>';
+
                                     }
-                                ?>
-                                <!-- <div class="col l-12 m-12 c-12">
-                                    <span class = "body__product-noProduct">Không có sản phẩm bạn tìm kiếm</span>
-                                </div> -->
+                                    } else {
+                                        echo '<div class="col l-12 m-12 c-12">
+                                        <span class = "body__product-noProduct">Không có sản phẩm bạn tìm kiếm</span>
+                                    </div>';
+                                    } 
+                                ?>     
                                 
                             </div>
                         </div>

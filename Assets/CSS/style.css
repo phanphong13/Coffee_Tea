@@ -1081,7 +1081,7 @@ input[name = "show-list"] {
     font-size: 2rem;
     margin: 20px;
     font-weight: 500;
-    color: var(--black-color);
+    color: var(--text-color);
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;

@@ -10,14 +10,14 @@
         </div>
         <div class="h-right">
             <div class="header__user">
-                <!-- <span class="header__user-name">
+                <span class="header__user-name">
 
                     <?php 
-                        if (isset($_SESSION['email'])) {
-                            echo $_SESSION['email'];
-                        }
+                        // if (isset($_SESSION['email'])) {
+                        //     echo $_SESSION['email'];
+                        // }
                     ?>
-                </span> -->
+                </span>
                 <div class="header__user-img">
                     <i class="fa-solid fa-circle-user"></i>
                     <div class="header__user-logout">
@@ -89,28 +89,36 @@
     </div>
     <div class="header-nav">
         <ul class="h-nav__list">
+            <?php 
+                if (isset($_GET['controller'])) {
+                    $controller = $_GET['controller'];
+                }
+                if (isset($_GET['id_category'])) {
+                    $id_category = $_GET['id_category'];
+                }
+            ?>                
             <li class="h-nav__list-item">
-                <a href="index.php?controller=home" class="h-nav__list-item-link">
+                <a href="index.php?controller=home" class="h-nav__list-item-link <?php if ((isset($controller) && $controller == 'home') || isset($id_category)) echo "h-nav__list-item-link-main" ?>">
                     Trang chủ
                 </a>
             </li>
             <li class="h-nav__list-item">
-                <a href="index.php?controller=coffee" class="h-nav__list-item-link h-nav__list-item-link-main ">
+                <a href="index.php?controller=coffee" class="h-nav__list-item-link <?php if (isset($controller) && $controller == 'coffee') echo "h-nav__list-item-link-main" ?> ">
                     Cà phê
                 </a>
                 </li>
             <li class="h-nav__list-item">
-                <a href="index.php?controller=tea" class="h-nav__list-item-link">
+                <a href="index.php?controller=tea" class="h-nav__list-item-link <?php if (isset($controller) && $controller == 'tea') echo "h-nav__list-item-link-main" ?> ">
                     Trà
                 </a>
             </li>
             <li class="h-nav__list-item">
-                <a href="index.php?controller=product" class="h-nav__list-item-link">
+                <a href="index.php?controller=product" class="h-nav__list-item-link <?php if (isset($controller) && $controller == 'product') echo "h-nav__list-item-link-main" ?> ">
                     Sản phẩm
                 </a>
             </li>
             <li class="h-nav__list-item">
-                <a href="index.php?controller=intro" class="h-nav__list-item-link">
+                <a href="index.php?controller=intro" class="h-nav__list-item-link <?php if (isset($controller) && $controller == 'intro') echo "h-nav__list-item-link-main" ?> ">
                     Giới thiệu
                 </a>
             </li>
