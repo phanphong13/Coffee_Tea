@@ -5,6 +5,7 @@
 		{
 			parent::__construct();
 			if(isset($_POST['email'])) { 
+				$name = $this->model->escape_string($_POST['name']);
 				$email = $this->model->escape_string($_POST['email']);
 				$password = $this->model->escape_string($_POST['password']);
 				//search username in database
@@ -14,6 +15,7 @@
                 if(isset($_POST['signup'])) { // sign up
 					if($result === NULL) {
 						$data = array(
+							'name' => $name,
 							'email' => $email,
 							'password' => $password,
 						);

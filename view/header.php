@@ -13,8 +13,8 @@
                 <span class="header__user-name">
 
                     <?php 
-                        if (isset($_SESSION['email'])) {
-                            echo $_SESSION['email'];
+                        if (isset($_SESSION['name'])) {
+                            echo $_SESSION['name'];
                         }
                     ?>
                 </span>
@@ -92,7 +92,7 @@
                                     
                                     
                                 </ul>
-                                <a href="" class="header__cart-products-orderAll">
+                                <a href="?controller=payment" class="header__cart-products-orderAll">
                                     Đặt hàng
                                 </a>
                             </div>

@@ -6,6 +6,7 @@
 			parent::__construct();
 
 			if(isset($_POST['email'])) { 
+				
 				$email = $this->model->escape_string($_POST['email']);
 				$password = $this->model->escape_string($_POST['password']);
 
@@ -19,8 +20,9 @@
 					   $alert = "Tên đăng nhập sai";
 				   } else {
 					   if($result[0]['password'] === $password) {
-						   $_SESSION['email'] = $email;
-						   $_SESSION['id_account'] = $result[0]['id'];
+							$_SESSION['name'] = $result[0]['name'];
+						   	$_SESSION['email'] = $email;
+						   	$_SESSION['id_account'] = $result[0]['id'];
 						   header("Location: index.php?controller=home");
 					   } else {
 						   $alert = "Mật khẩu sai";

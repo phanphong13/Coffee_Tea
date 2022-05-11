@@ -1359,13 +1359,13 @@ input[name = "show-list"] {
     border: none;
     padding: 10px 0 ;
     font-size: 1.4rem;
-    background-color: #007afe;
+    background-color: var(--primary-color);
     color: var(--white-color);
     border-radius: 2px;
 }
 
 .payment__btn:hover {
-    background-color: #056cdb;
+    background-color: #074c29;
 }
 
 .payment__cart-header {
@@ -1402,4 +1402,8 @@ input[name = "show-list"] {
     font-size: 1.6rem;
     margin-bottom: 38px;
 
+}
+
+.payment__cart-sumPrice span {
+    color: red;
 }
