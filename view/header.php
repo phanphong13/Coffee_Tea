@@ -42,40 +42,54 @@
                             <div class="header__cart-logo">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <div class="header__cart-logo-index">
-                                    0
+                                    <?php
+                                        if ($product_order) {
+                                            echo count($product_order);
+                                        } else {
+                                            echo 0;
+                                        }
+                                    ?>
                                 </div>
                             </div> 
                             <div class="header__cart-products">
                                 <span class="header__cart-products-header">Sản phẩm của bạn</span>
                                 <ul class="header__cart-products-list">
-                                    
-                                    <li class="header__cart-products-item">
-                                        <div class="header__cart-products-item-img">
-                                            <img src="./Assets/Img/Products/TS/NgocVienDong.png" alt="">
-                                        </div>
-                                        <div class="header__cart-products-item-body">
-                                            <div class="header__cart-products-item-body-top">
-                                                <div class="header__cart-products-item-text">Ngọc viễn đông</div>
-                                            </div>
-                                            <div class="header__cart-products-item-body-bottom">
-                                                <div class="header__cart-products-item-price">
-                                                    <span class="header__cart-products-item-price-price">
-                                                        50.000 đ
-                                                    </span>
-                                                    <span class="header__cart-products-item-price-mul">
-                                                        x
-                                                    </span><span class="header__cart-products-item-price-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
+                                    <?php 
+                                        if ($product_order) {
+                                            for ($i = 0; $i < count($product_order); $i++) {
+                                    ?>
+                                                <li class="header__cart-products-item">
+                                                    <div class="header__cart-products-item-img">
+                                                        <img src="<?php echo $product_order[$i]['link_img']?>" alt="">
+                                                    </div>
+                                                    <div class="header__cart-products-item-body">
+                                                        <div class="header__cart-products-item-body-top">
+                                                            <div class="header__cart-products-item-text"><?php echo $product_order[$i]['title']?></div>
+                                                        </div>
+                                                        <div class="header__cart-products-item-body-bottom">
+                                                            <div class="header__cart-products-item-price">
+                                                                <span class="header__cart-products-item-price-price">
+                                                                    <?php echo $product_order[$i]['price']?>đ
+                                                                </span>
+                                                                <span class="header__cart-products-item-price-mul">
+                                                                    x
+                                                                </span><span class="header__cart-products-item-price-qnt">
+                                                                    <?php echo $product_order[$i]['num']?>
+                                                                </span>
+                                                            </div>
 
-                                                <div class="header__cart-products-item-delete">
-                                                    Xóa
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </li>
+                                                            <a href="?method=delete&id_order=<?php echo $product_order[$i]['id'] ?>" class="header__cart-products-item-delete">
+                                                                Xóa
+                                                            </a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
+                                    
                                     
                                 </ul>
                                 <div class="header__cart-products-orderAll">

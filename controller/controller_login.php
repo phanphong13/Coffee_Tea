@@ -20,6 +20,7 @@
 				   } else {
 					   if($result[0]['password'] === $password) {
 						   $_SESSION['email'] = $email;
+						   $_SESSION['id_account'] = $result[0]['id'];
 						   header("Location: index.php?controller=home");
 					   } else {
 						   $alert = "Mật khẩu sai";

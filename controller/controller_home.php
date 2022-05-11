@@ -31,6 +31,34 @@
 					if($products === false) die('Failed  0');
 				}
 			}
+
+			if (isset($_GET['id']) && isset($_GET['method']) && $_GET['method'] == "add") {
+				$id_product = $_GET['id'];
+				$sql = "SELECT * FROM `product` WHERE id = {$id_product}";
+				$sp = $this->model->query($sql, true);
+				if ($sp === false) die('Failed');
+				$data = array(
+					'product_id' => $id_product,
+					'account_id' => $_SESSION['id_account'],
+					'price' => $sp[0]['price'],
+					'num' => 1,
+					'title' => $sp[0]['title'],
+					'link_img' => $sp[0]['link_img'],
+					'price_total' => $sp[0]['price']
+				);
+				if(!$this->model->insert('orders', $data))
+					die('Insert order: Failed!');
+				header("Location: index.php?controller=home");
+				
+			}
+
+			if (isset($_GET['id_order']) && isset($_GET['method']) && $_GET['method'] == "delete") {
+				$id_order = $_GET['id_order'];
+				$orders = $this->model->delete("orders", $id_order);	
+			}
+
+			$orderSql =  "SELECT * FROM `orders` WHERE account_id = {$_SESSION['id_account']}";
+			$product_order = $this->model->query($orderSql,true);
 			
 			include "./home.php";
         }
