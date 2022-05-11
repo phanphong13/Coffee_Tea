@@ -18,6 +18,11 @@
     
                                             <div class="auth-form__form">
                                                 <div class="auth-form__group">
+                                                    <label for="" class="auth-form__title" >Nhập họ tên</label>
+                                                    <input type="text" name="name" rules="required" autocomplete="on" class="auth-form__input " placeholder="Nhập họ tên của bạn">
+                                                    <span class="auth-form__error"></span>
+                                                </div>
+                                                <div class="auth-form__group">
                                                     <label for="" class="auth-form__title" >Nhập email</label>
                                                     <input type="text" name="email" rules="required|email" autocomplete="on" class="auth-form__input " placeholder="Nhập email của bạn">
                                                     <span class="auth-form__error"></span>

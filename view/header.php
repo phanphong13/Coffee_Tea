@@ -13,9 +13,9 @@
                 <span class="header__user-name">
 
                     <?php 
-                        // if (isset($_SESSION['email'])) {
-                        //     echo $_SESSION['email'];
-                        // }
+                        if (isset($_SESSION['email'])) {
+                            echo $_SESSION['email'];
+                        }
                     ?>
                 </span>
                 <div class="header__user-img">
@@ -92,9 +92,9 @@
                                     
                                     
                                 </ul>
-                                <div class="header__cart-products-orderAll">
-                                    Xem giỏ hàng
-                                </div>
+                                <a href="" class="header__cart-products-orderAll">
+                                    Đặt hàng
+                                </a>
                             </div>
                         </div>
                     </div>
