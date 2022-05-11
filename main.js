@@ -219,7 +219,7 @@ function validator(formSelector) {
 
         max: function(max) {
             return function(value) {
-                return value.length >= max ? undefined : `Vui lòng nhập tối thiểu ${max} kí tự`;
+                return value.length <= max ? undefined : `Vui lòng nhập tối đa ${max} kí tự`;
             }
         },
         isConfirm: function(value) {

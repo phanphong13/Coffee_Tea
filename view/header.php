@@ -87,14 +87,26 @@
                                                 </li>
                                     <?php
                                             }
+                                    ?>
+                                        <a href="?controller=payment" class="header__cart-products-orderAll">
+                                            Đặt hàng
+                                        </a>
+                                    <?php
+                                        } else {
+                                    ?>
+                                        <li class="header__cart-products-item">
+                                            <span class="header__cart-products-item-no">
+                                                Chưa có sản phẩm
+                                            </span>
+                                        </li>
+                                    <?php
                                         }
+                                
                                     ?>
                                     
                                     
                                 </ul>
-                                <a href="?controller=payment" class="header__cart-products-orderAll">
-                                    Đặt hàng
-                                </a>
+                                
                             </div>
                         </div>
                     </div>

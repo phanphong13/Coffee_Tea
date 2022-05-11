@@ -137,6 +137,8 @@
  
 
 .header__user-name {
+    min-width: 100px;
+    text-align: right;
     color: var(--primary-color);
     font-size: 1.4rem;
     line-height: 30px;
@@ -276,6 +278,15 @@
     display: flex;
     padding: 10px 0;
     border-bottom: 1px solid #f5f5f5;
+}
+
+.header__cart-products-item-no {
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
 }
 
 .header__cart-products-item:hover {
@@ -1406,4 +1417,34 @@ input[name = "show-list"] {
 
 .payment__cart-sumPrice span {
     color: red;
+}
+
+/* payment success */
+.payment__success {
+    margin-top: 50px;
+    padding-top: 50px;
+    width: 100%;
+    background: url('/Assets/Img/Products/icon_hotproduct.png') top center / cover no-repeat;
+}
+
+.payment__success-icon {
+    text-align: center;
+    font-size: 6rem;
+    color: var(--primary-color);
+}   
+
+.payment__success-text {
+    margin: 30px 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 4rem;
+}
+
+.payment__success-back  {
+    display: block;
+    font-size: 2rem;
+    text-decoration: none;
+    text-align: center;
+    margin: 130px 0 170px 0;
+    color: var(--primary-color);
 }

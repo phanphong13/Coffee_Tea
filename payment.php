@@ -33,22 +33,22 @@
                     <div class="auth-form__form">
                         <div class="auth-form__group">
                             <label for="" class="auth-form__title" >Họ tên</label>
-                            <input type="text" name="name" rules="required" autocomplete="on" class="auth-form__input " placeholder="Nhập họ tên của bạn">
+                            <input type="text" name="name" rules="required" required autocomplete="on" class="auth-form__input " placeholder="Nhập họ tên của bạn">
                             <span class="auth-form__error"></span>
                         </div>
                         <div class="auth-form__group">
                             <label for="" class="auth-form__title" >Email</label>
-                            <input type="text" name="email" rules="required|email" autocomplete="on" class="auth-form__input " placeholder="Nhập email của bạn">
+                            <input type="text" name="email" rules="required|email" required autocomplete="on" class="auth-form__input " placeholder="Nhập email của bạn">
                             <span class="auth-form__error"></span>
                         </div>
                         <div class="auth-form__group">
                             <label for="" class="auth-form__title" >Địa chỉ</label>
-                            <input type="text" name="address" rules="required" autocomplete="on" class="auth-form__input " placeholder="Nhập địa chỉ của bạn">
+                            <input type="text" name="address" rules="required" required autocomplete="on" class="auth-form__input " placeholder="Nhập địa chỉ của bạn">
                             <span class="auth-form__error"></span>
                         </div>
                         <div class="auth-form__group">
                             <label for="" class="auth-form__title" >Số điện thoại</label>
-                            <input type="text" name="phoneNumber" rules="required|min:10" autocomplete="on" class="auth-form__input " placeholder="Nhập số điện thoại của bạn">
+                            <input type="text" name="phoneNumber" rules="required|min:10" required autocomplete="on" class="auth-form__input " placeholder="Nhập số điện thoại của bạn">
                             <span class="auth-form__error"></span>
                         </div>
                         
