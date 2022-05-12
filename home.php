@@ -96,6 +96,9 @@
                                     if (isset($_GET['sort'])) {
                                         $sort = $_GET['sort'];
                                     }
+                                    if (isset($_GET['search'])) {
+                                        $search = $_GET['search'];
+                                    }
                                 ?>
                                 <form action="" method="GET" class = "body-top-form">
                                     <div class="body-xs body-xs-left">
@@ -116,7 +119,7 @@
                                             Tìm kiếm
                                         </lable>
                                         <div class="body-xs__input">
-                                            <input type="text" name="search" class="body-xs__input-input" placeholder="Tìm kiếm"> <!--type submit-->
+                                            <input type="text" name="search" class="body-xs__input-input" value="<?php if (isset($search)) echo $search?>"placeholder="Tìm kiếm"> <!--type submit-->
                                             <button class="body-xs__input-btn">
                                                 <div class="body-xs__input-icon">
                                                     <i class="fa-solid fa-magnifying-glass"></i>
