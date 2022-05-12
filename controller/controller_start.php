@@ -3,21 +3,23 @@
         function __construct() {
 			parent::__construct();
 			
-			if (isset($_GET['sort'])) {
+			if (isset($_GET['sort']) && $_GET['search']) {
 				$sort = $_GET['sort'];
+				$search = $_GET['search'];
 				switch ($sort) {
-					case 'b':
-						$sql = "SELECT * FROM `product` ORDER BY price;";
+					case 'ASC':
+						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%' ORDER BY price;";
 						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 1');						
 						break;
-					case 'c':
-						$sql = "SELECT * FROM `product` ORDER BY price DESC;";
+					case 'DESC':
+						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%' ORDER BY price DESC;";
 						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 2');
 						break;
-					default: 
-						$products = $this->model->getArray('product');
+					default:
+						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%'";
+						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 0');						
 				}
 			} else {

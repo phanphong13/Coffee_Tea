@@ -25,7 +25,7 @@
             </div>
 
             <div class="col l-7 m-7 c-7">
-                <form action="" method="get" id="payment">
+                <form action="" method="post" id="payment">
                     <div class="payment__info-header">
                         <span>Thông tin khách hàng</span>
                     </div>
@@ -58,7 +58,7 @@
                         <span>Hình thức thanh toán : Thanh toán khi nhận hàng</span>
                     </div>
 
-                    <button class="payment__btn">
+                    <button name="order" class="payment__btn">
                         ĐẶT HÀNG
                     </button>
 
@@ -73,13 +73,17 @@
                 <div class="payment__cart-number">
                     Số lượng :
                     <span>
-                        <?php
-                            if ($product_order) {
-                                echo count($product_order);
-                            } else {
-                                echo 0;
+                    <?php
+                        if ($product_order) {
+                            $num_product = 0;
+                            for ($i = 0; $i < count($product_order); $i++) {
+                                $num_product += $product_order[$i]['num'];
                             }
-                        ?>
+                            echo $num_product;
+                        } else {
+                            echo 0;
+                        }
+                    ?>
                     </span>
 
                 </div>
@@ -131,13 +135,13 @@
                         Tổng giá:
                         <span>
                             <?php 
-                                $sum = 0;
-                                if ($product_order) {
-                                    for ($i = 0; $i < count($product_order); $i++) {
-                                        $sum += $product_order[$i]['price'] * $product_order[$i]['num'];
-                                    }
-                                }
-                                echo $sum;
+                                // $sum = 0;
+                                // if ($product_order) {
+                                //     for ($i = 0; $i < count($product_order); $i++) {
+                                //         $sum += $product_order[$i]['price'] * $product_order[$i]['num'];
+                                //     }
+                                // }
+                                if ($sum > 0) echo $sum; else echo 0;
                             ?>.000 đ
                             
                         </span>

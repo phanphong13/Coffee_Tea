@@ -44,7 +44,11 @@
                                 <div class="header__cart-logo-index">
                                     <?php
                                         if ($product_order) {
-                                            echo count($product_order);
+                                            $num_product = 0;
+                                            for ($i = 0; $i < count($product_order); $i++) {
+                                                $num_product += $product_order[$i]['num'];
+                                            }
+                                            echo $num_product;
                                         } else {
                                             echo 0;
                                         }

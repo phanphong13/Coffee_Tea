@@ -49,16 +49,16 @@
             return false;
         }
     
-        function update($table, $data, $id) {
+        function update($table, $colum, $data, $id) {
             $id = (int)$id;
-            if(!is_string($table) || !is_array($data) || !is_integer($id))
+            if(!is_string($table) || !is_array($colum) || !is_array($data) || !is_integer($id))
                 return false;
             $content = "";
             foreach ($data as $key => $value) {
                 $content .= $key." = '".$this->conn->escape_string($value)."', ";
             }
             $content = trim($content, ', ');
-            $sql = "UPDATE `$table` SET $content WHERE id = $id;";
+            $sql = "UPDATE `$table` SET $colum = $data WHERE id = $id;";
             return $this->conn->query($sql);
         }
     
@@ -67,6 +67,14 @@
             if(!is_string($table) || !is_integer($id))
                 return false;
             $sql = "DELETE FROM `$table` WHERE id = $id;";
+            return $this->conn->query($sql);
+        }
+
+        function deleteOrder($table, $id) {
+            $id = (int)$id;
+            if(!is_string($table) || !is_integer($id))
+                return false;
+            $sql = "DELETE FROM `$table` WHERE account_id = $id;";
             return $this->conn->query($sql);
         }
 

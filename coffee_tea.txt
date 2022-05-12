@@ -121,3 +121,15 @@ CREATE TABLE `orders` (
   FOREIGN KEY (product_id) REFERENCES product(id),
   FOREIGN KEY (account_id) REFERENCES account(id)
 );
+
+CREATE TABLE `payments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(10) NOT NULL,
+  `phone_number` varchar(50) NOT NULL,
+  `total_amount` decimal(10,3),
+  PRIMARY KEY(id),
+  FOREIGN KEY (account_id) REFERENCES account(id)
+);

@@ -167,8 +167,8 @@
 
                                         <select id="body-xs-price" class="body-xs__select" name="sort"> <!-- add name-->
                                             <option value="">Không lựa chọn</option>
-                                            <option <?php if (isset($sort) && $sort == 'b') echo "selected=\"selected\""; ?> value="b">Từ thấp đến cao</option>
-                                            <option <?php if (isset($sort) && $sort == 'c') echo "selected=\"selected\""; ?> value="c">Từ cao đến thấp</option>
+                                            <option <?php if (isset($sort) && $sort == 'ASC') echo "selected=\"selected\""; ?> value="ASC">Từ thấp đến cao</option>
+                                            <option <?php if (isset($sort) && $sort == 'DESC') echo "selected=\"selected\""; ?> value="DESC">Từ cao đến thấp</option>
                                         </select>
 
                                     </div>
@@ -192,7 +192,7 @@
                             
                             <div class="row">
                                 <?php 
-                                    if (count($products) > 0) {
+                                    if (isset($products)) {
                                     for ($i = 0; $i < count($products); $i++) {
                 
                                         echo '<div class="col l-3 m-6 c-10">

@@ -137,7 +137,7 @@
  
 
 .header__user-name {
-    min-width: 100px;
+    min-width: 200px;
     text-align: right;
     color: var(--primary-color);
     font-size: 1.4rem;
