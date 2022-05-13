@@ -4,7 +4,7 @@
     
     <title>>Tea</title>
     <?php 
-        include "./view/head.php";
+        include "view_child/head.php";
     ?>
     
 </head>
@@ -12,14 +12,14 @@
     <div class="app">
         <!-- header -->
         <?php 
-            include "./view/header.php";
+            include "view_child/header.php";
         ?>
     
         <div id="container">
             <div class="slidershow">
                 <div class="sliders">
                     <div class="slider-item s1">
-                        <img src="./Assets/Img/Slider/tra.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <h1 class="info__heading-header">LÁ TRÀ THIÊN NHIÊN</h1>
                 </div>
                 <div class="info__header-img">
-                    <img src="./Assets/Img/dongkengang.png" alt="">
+                    <img src="Assets/Img/dongkengang.png" alt="">
                 </div>
                 <div class="info__header-slogan">
                     <p class="info__header-slogan-text">
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col l-6 m-12 c-12 content__item">
                             <div class="content__item-img">
-                                <img src="./Assets/Img/Tra/tra2.jpg" alt="">
+                                <img src="Assets/Img/Tra/tra2.jpg" alt="">
                             </div>
                         </div>
                         <div class="col l-6 m-12 c-12 content__item">
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col l-6 m-12 c-12 content__item">
                             <div class="content__item-img">
-                                <img src="./Assets/Img/Tra/tra3.jpg" alt="">
+                                <img src="Assets/Img/Tra/tra3.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                     <div class="row">
                         <div class="col l-6 m-12 c-12 content__item">
                             <div class="content__item-img">
-                                <img src="./Assets/Img/Tra/tra4.jpg" alt="">
+                                <img src="Assets/Img/Tra/tra4.jpg" alt="">
                             </div>
                         </div>
                         <div class="col l-6 m-12 c-12 content__item">
@@ -112,7 +112,7 @@
     
         <!-- footer -->
         <?php 
-            include "./view/footer.php";
+            include "view_child/footer.php";
         ?>
 
     </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>>Order Success</title>
-    <?php include "./view/head.php"?>
+    <?php include "view_child/head.php"?>
 </head>
 <body>
     <div class="grid wide">
@@ -22,7 +22,7 @@
         </div>
     </div>
     <?php 
-        include "./view/footer.php";
+        include "view_child/footer.php";
     ?>
 
 

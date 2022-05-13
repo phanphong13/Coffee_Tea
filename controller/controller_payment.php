@@ -40,7 +40,7 @@
 				}
 			}
 			
-			include "./payment.php";
+			include "./view/payment.php";
         }
     }
 

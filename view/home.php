@@ -4,7 +4,7 @@
     
     <title>Coffee & Tea</title>
     <?php 
-        include "./view/head.php";
+        include "view_child/head.php";
     ?>
     
 </head>
@@ -12,7 +12,7 @@
 
     <div class="app">
         <?php  
-            include "./view/header.php";
+            include "view_child/header.php";
         ?>
         <div id="container">
             <!-- Slidershow -->
@@ -29,16 +29,16 @@
                         <label for="r4" class="slidershow__navgation-bar slidershow__navgation-bar4"></label>
                     </div>
                     <div class="slider-item s1">
-                        <img src="./Assets/Img/Slider/tra2.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra2.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra3.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra3.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra4.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra4.jpg" alt="">
                     </div>
                 </div>
                 
@@ -165,7 +165,7 @@
             </div>
         </div>
         <?php
-            include "./view/footer.php";
+            include "view_child/footer.php";
         ?>
 
     </div>
@@ -173,7 +173,7 @@
     
     <!-- modal order -->
     <?php 
-        include "./view/modal.php";
+        include "view_child/modal.php";
         if (isset($products)) {
             for ($i = 0; $i < count($products); $i++) {
                 includeModal($products, $i);
@@ -181,7 +181,7 @@
         }
     ?>
 
-    <script src="./main.js"></script>
+    <script src="Assets/JS/main.js"></script>
     <script>
         validator('#register-form');
         validator('#login-form');

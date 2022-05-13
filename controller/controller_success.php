@@ -1,3 +1,3 @@
 <?php 
-    include "./success.php";
+    include "./view/success.php";
 ?>

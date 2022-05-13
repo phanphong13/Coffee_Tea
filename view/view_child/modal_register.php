@@ -4,9 +4,7 @@
                                 <div class="auth-form">
                                     <div class="auth-form__container">
                                         <form action="" method="post" id="register-form">
-                                            <?php 
-                                                new controller_register();
-                                            ?>
+                                            
                                             <div class="auth-form__header">
                                                 <h3 class="auth-form__heading">
                                                     Đăng kí

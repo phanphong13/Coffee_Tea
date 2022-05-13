@@ -8,7 +8,7 @@
 			$orderSql =  "SELECT * FROM `orders` WHERE account_id = {$_SESSION['id_account']}";
 			$product_order = $this->model->query($orderSql,true);
             
-            include "./product.php";
+            include "./view/product.php";
 		}
 	}
 

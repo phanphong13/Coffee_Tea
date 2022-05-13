@@ -3,25 +3,25 @@
 <head>
     <title>Coffee & Tea</title>
     <?php 
-        include './view/head.php';
+        include 'view_child/head.php';
     ?>
 </head>
 <body>
 
     <?php 
     
-        include "./controller/controller_login.php";
-        include "./controller/controller_register.php";
+        // include "./controller/controller_login.php";
+        // include "./controller/controller_register.php";
     ?>
     <div class="app">
         <div id="header">
             <div class="header-top">
                 <div class="h-left">
-                    <img src="./Assets/Img/Header/delivery.png" alt="">
+                    <img src="Assets/Img/Header/delivery.png" alt="">
                 </div>
                 <div class="h-center">
                     <a href="" class="h-center-logo" >
-                     <img src="./Assets/Img/Header/logo-main.jpg" alt="" class = "h-center-logo-img">
+                     <img src="Assets/Img/Header/logo-main.jpg" alt="" class = "h-center-logo-img">
                     </a>  
                 </div>
                 <div class="h-right">
@@ -35,8 +35,8 @@
                         <div for="" class="modal__overlay-login"></div>
 
                         <?php 
-                            include './view/modal_login.php';
-                            include './view/modal_register.php';
+                            include 'view_child/modal_login.php';
+                            include 'view_child/modal_register.php';
                         ?>
                     </div>
                     
@@ -90,16 +90,16 @@
                         <label for="r4" class="slidershow__navgation-bar slidershow__navgation-bar4"></label>
                     </div>
                     <div class="slider-item s1">
-                        <img src="./Assets/Img/Slider/tra2.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra2.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra3.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra3.jpg" alt="">
                     </div>
                     <div class="slider-item">
-                        <img src="./Assets/Img/Slider/tra4.jpg" alt="">
+                        <img src="Assets/Img/Slider/tra4.jpg" alt="">
                     </div>
                 </div>
                 
@@ -230,13 +230,13 @@
     
         <?php 
             
-            include "./view/footer.php";
+            include "view_child/footer.php";
 
         ?>
 
     </div>
     
-    <script src="./main.js"></script>
+    <script src="Assets/JS/main.js"></script>
     <script>
         validator('#register-form');
         validator('#login-form');

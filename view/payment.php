@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>>Payment</title>
     <?php 
-        include "./view/head.php";
+        include "view_child/head.php";
     ?>
 </head>
 <body>
@@ -156,7 +156,7 @@
         </div>
     </div>
     <?php 
-        include "./view/footer.php";
+        include "view_child/footer.php";
     ?>
 
     <script src="./main.js"></script>

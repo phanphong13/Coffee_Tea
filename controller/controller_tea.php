@@ -9,7 +9,7 @@
 			$product_order = $this->model->query($orderSql,true);
 
             
-            include "./tea.php";
+            include "./view/tea.php";
 		}
 	}
 

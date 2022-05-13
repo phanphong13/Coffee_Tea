@@ -1,11 +1,11 @@
 <div id="header">
     <div class="header-top">
         <div class="h-left">
-            <img src="./Assets/Img/Header/delivery.png" alt="">
+            <img src="Assets/Img/Header/delivery.png" alt="">
         </div>
         <div class="h-center">
             <a href="" class="h-center-logo" >
-                <img src="./Assets/Img/Header/logo-main.jpg" alt="" class = "h-center-logo-img">
+                <img src="Assets/Img/Header/logo-main.jpg" alt="" class = "h-center-logo-img">
             </a>  
         </div>
         <div class="h-right">

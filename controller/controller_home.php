@@ -8,27 +8,27 @@
 				$search = $_GET['search'];
 				switch ($sort) {
 					case 'ASC':
-						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%' ORDER BY price;";
+						$sql = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' ORDER BY price;";
 						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 1');						
 						break;
 					case 'DESC':
-						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%' ORDER BY price DESC;";
+						$sql = "SELECT * FROM `products` WHERE title LIKE '%{$search}%' ORDER BY price DESC;";
 						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 2');
 						break;
 					default:
-						$sql = "SELECT * FROM `product` WHERE title LIKE '%{$search}%'";
+						$sql = "SELECT * FROM `products` WHERE title LIKE '%{$search}%'";
 						$products = $this->model->query($sql, true);
 						if ($products === false) die('Failed product 0');						
 				}
 			} else {
 				if (!isset($_GET['id_category'])) {
-					$products = $this->model->getArray('product');
+					$products = $this->model->getArray('products');
 					if ($products === false) die('Failed product 0');
 				} else {
 					$id = $_GET['id_category'];
-					$sql = "SELECT * FROM `product` WHERE category_id = {$id}";
+					$sql = "SELECT * FROM `products` WHERE category_id = {$id}";
 					$products = $this->model->query($sql, true);
 					if($products === false) die('Failed  0');
 				}
@@ -38,7 +38,7 @@
 				$id_product = $_GET['id'];
 				$result = $this->model->query("select * from `orders` where product_id = '$id_product';", true);
 				if($result === false) die("Failed in controller_login 1");
-				$sql = "SELECT * FROM `product` WHERE id = {$id_product}";
+				$sql = "SELECT * FROM `products` WHERE id = {$id_product}";
 				$sp = $this->model->query($sql, true);
 				if ($result === NULL) {
 					
@@ -72,7 +72,7 @@
 			$orderSql =  "SELECT * FROM `orders` WHERE account_id = {$_SESSION['id_account']}";
 			$product_order = $this->model->query($orderSql,true) ;
 			
-			include "./home.php";
+			include "./view/home.php";
         }
     }
 

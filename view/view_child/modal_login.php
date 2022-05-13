@@ -5,9 +5,7 @@
                                     <div class="auth-form__container">
 
                                         <form action="" method="post" id="login-form">
-                                            <?php 
-                                                new controller_login();
-                                            ?>
+                                            
                                             <div class="auth-form__header">
                                                 <h3 class="auth-form__heading">
                                                     Đăng nhập
