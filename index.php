@@ -5,7 +5,7 @@
 
     if(isset($_SESSION['id_account'])) {
 		$controller = isset($_GET['controller']) ? $_GET['controller']:"home";
-		if($controller == 'start') $controller = 'home';
+		// if($controller == 'start') $controller = 'home';
 	} else {
 		$controller = 'start';
 	}
