@@ -12,17 +12,7 @@ setInterval(function() {
 
 // mo logout
 
-var btnUser = document.querySelector('.header__user-img');
-var userLogout = document.querySelector('.header__user-logout');
-if(btnUser) {
-    userLogout.addEventListener('click', function(event) {
-        event.stopPropagation();
-    })
-    btnUser.addEventListener('click', function() {
-        userLogout.classList.toggle("display-block");
-    })
-    
-}
+
 
 // mo cart
 

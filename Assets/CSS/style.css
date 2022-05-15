@@ -57,14 +57,6 @@
     position: relative;
 }
 
-.header__user-img:hover {
-    color: #2ab46d;
-}
-
-.header__user-img:hover .header__user-logout {
-    display: flex;
-}
-
 .header__user-img::before {
     content: "";
     position: absolute;
@@ -106,7 +98,8 @@
 
 .header__user-logout-link {
     text-decoration: none;
-    margin: 5px 0;
+    height: 50px;
+    padding: 0 10px;
 }
 
 .header__user-logout-link {
@@ -242,9 +235,9 @@
     right: -6px;
 }
 
-.header__cart:hover .header__cart-products {
+/* .header__cart:hover .header__cart-products {
     display: block;
-}
+} */
 
 .header__cart-products {
     position: absolute;
