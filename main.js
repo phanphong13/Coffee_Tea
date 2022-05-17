@@ -12,17 +12,7 @@ setInterval(function() {
 
 // mo logout
 
-var btnUser = document.querySelector('.header__user-img');
-var userLogout = document.querySelector('.header__user-logout');
-if(btnUser) {
-    userLogout.addEventListener('click', function(event) {
-        event.stopPropagation();
-    })
-    btnUser.addEventListener('click', function() {
-        userLogout.classList.toggle("display-block");
-    })
-    
-}
+
 
 // mo cart
 
@@ -40,74 +30,74 @@ if(btnCart) {
 }
 
 // order
-// var number = document.querySelectorAll('.product__order-number-item-center');
-// var tru = document.querySelectorAll('.product__order-number-item-left');
-// var cong = document.querySelectorAll('.product__order-number-item-right');
-// var price = document.querySelectorAll('.product__order-sum-price');
+var number = document.querySelectorAll('.product__order-number-item-center');
+var tru = document.querySelectorAll('.product__order-number-item-left');
+var cong = document.querySelectorAll('.product__order-number-item-right');
+var price = document.querySelectorAll('.product__order-sum-price');
 
 
 
-// var sum = new Array();
-// var sumPrice = new Array();
-// var sumPrice_old = new Array();
-// if(number) {
-//     for (var i = 0; i < number.length; i++ ) (function(i){ 
-//         sum[i] = parseInt(number[i].innerText, 10);
-//     })(i);
-// }
+var sum = new Array();
+var sumPrice = new Array();
+var sumPrice_old = new Array();
+if(number) {
+    for (var i = 0; i < number.length; i++ ) (function(i){ 
+        sum[i] = parseInt(number[i].innerText, 10);
+    })(i);
+}
 
-// if(price) {
-//     for (var i = 0; i < price.length; i++ ) (function(i){ 
-//         sumPrice[i] = parseInt(price[i].innerText);
-//         sumPrice_old[i] = parseInt(price[i].innerText);
+if(price) {
+    for (var i = 0; i < price.length; i++ ) (function(i){ 
+        sumPrice[i] = parseInt(price[i].innerText);
+        sumPrice_old[i] = parseInt(price[i].innerText);
 
-//     })(i);
-// }
+    })(i);
+}
 
 
-// var sizeM = document.querySelectorAll('.product__order-size-M');
-// var sizeL = document.querySelectorAll('.product__order-size-L');
+var sizeM = document.querySelectorAll('.product__order-size-M');
+var sizeL = document.querySelectorAll('.product__order-size-L');
 
-// if(sizeM) {
-//     for (var i = 0; i < sizeM.length; i++ ) (function(i){ 
-//         sizeM[i].onclick = function() {
-//             if (sizeL[i].classList.contains('btn--primary')) {
-//                 sizeL[i].classList.remove('btn--primary');
-//                 sizeM[i].classList.add('btn--primary');
-//                 sumPrice_old[i] -= 10;
-//                 sumPrice[i] = sumPrice[i] - 10 * sum[i];
-//                 price[i].innerText = sumPrice[i] + '.000 đ';
-//             }
-//         }
+if(sizeM) {
+    for (var i = 0; i < sizeM.length; i++ ) (function(i){ 
+        sizeM[i].onclick = function() {
+            if (sizeL[i].classList.contains('btn--primary')) {
+                sizeL[i].classList.remove('btn--primary');
+                sizeM[i].classList.add('btn--primary');
+                sumPrice_old[i] -= 10;
+                sumPrice[i] = sumPrice[i] - 10 * sum[i];
+                price[i].innerText = sumPrice[i] + '.000 đ';
+            }
+        }
 
-//         sizeL[i].onclick = function() {
-//             if (sizeM[i].classList.contains('btn--primary')) {
-//                 sizeM[i].classList.remove('btn--primary');
-//                 sizeL[i].classList.add('btn--primary');
-//                 sumPrice_old[i] += 10;
-//                 sumPrice[i] = sumPrice[i] + 10 * sum[i];
-//                 price[i].innerText = sumPrice[i] + '.000 đ';
-//             }
-//         }
+        sizeL[i].onclick = function() {
+            if (sizeM[i].classList.contains('btn--primary')) {
+                sizeM[i].classList.remove('btn--primary');
+                sizeL[i].classList.add('btn--primary');
+                sumPrice_old[i] += 10;
+                sumPrice[i] = sumPrice[i] + 10 * sum[i];
+                price[i].innerText = sumPrice[i] + '.000 đ';
+            }
+        }
 
-//         tru[i].onclick = function() {
-//             if (sum[i]>0) {
-//                 sum[i] = sum[i]-1;
-//                 sumPrice[i] = sumPrice[i] - sumPrice_old[i];
-//             }
-//             number[i].innerText = sum[i];
-//             price[i].innerText = sumPrice[i] + '.000 đ';
-//         }
+        tru[i].onclick = function() {
+            if (sum[i]>0) {
+                sum[i] = sum[i]-1;
+                sumPrice[i] = sumPrice[i] - sumPrice_old[i];
+            }
+            number[i].innerText = sum[i];
+            price[i].innerText = sumPrice[i] + '.000 đ';
+        }
 
-//         cong[i].onclick = function() {
-//             sum[i] = sum[i] + 1;
-//             sumPrice[i] = sumPrice[i] + sumPrice_old[i];
+        cong[i].onclick = function() {
+            sum[i] = sum[i] + 1;
+            sumPrice[i] = sumPrice[i] + sumPrice_old[i];
         
-//             number[i].innerText = sum[i];
-//             price[i].innerText = sumPrice[i] + '.000 đ';
-//         }
-//     })(i);
-// }
+            number[i].innerText = sum[i];
+            price[i].innerText = sumPrice[i] + '.000 đ';
+        }
+    })(i);
+}
 
 
 // btn-order
@@ -333,98 +323,4 @@ function validator(formSelector) {
 
     }
     
-}
-
-// order
-var number = document.querySelectorAll('.product__order-number-item-center');
-var tru = document.querySelectorAll('.product__order-number-item-left');
-var cong = document.querySelectorAll('.product__order-number-item-right');
-var price = document.querySelectorAll('.product__order-sum-price-total');
-
-
-
-var sum = new Array();
-var sumPrice = new Array();
-var sumPrice_old = new Array();
-if(number) {
-    for (var i = 0; i < number.length; i++ ) (function(i){ 
-        sum[i] = parseInt(number[i].innerText);
-    })(i);
-}
-
-if(price) {
-    for (var i = 0; i < price.length; i++ ) (function(i){ 
-        sumPrice[i] = parseInt(price[i].innerText) * 1000;
-        sumPrice_old[i] = parseInt(price[i].innerText) * 1000;
-
-    })(i);
-}
-
-
-var sizeM = document.querySelectorAll('.product__order-size-M');
-var sizeL = document.querySelectorAll('.product__order-size-L');
-
-if(sizeM) {
-    for (var i = 0; i < sizeM.length; i++ ) (function(i){ 
-        sizeM[i].onclick = function() {
-            if (sizeL[i].classList.contains('btn--primary')) {
-                sizeL[i].classList.remove('btn--primary');
-                sizeM[i].classList.add('btn--primary');
-                sumPrice_old[i] -= 10000;
-                sumPrice[i] = sumPrice[i] - 10000 * sum[i];
-                price[i].innerText = sumPrice[i].toLocaleString('en-US');
-            }
-        }
-
-        sizeL[i].onclick = function() {
-            if (sizeM[i].classList.contains('btn--primary')) {
-                sizeM[i].classList.remove('btn--primary');
-                sizeL[i].classList.add('btn--primary');
-                sumPrice_old[i] += 10000;
-                sumPrice[i] = sumPrice[i] + 10000 * sum[i];
-                price[i].innerText = sumPrice[i].toLocaleString('en-US');
-            }
-        }
-
-        tru[i].onclick = function() {
-            if (sum[i]>0) {
-                sum[i] = sum[i]-1;
-                sumPrice[i] = sumPrice[i] - sumPrice_old[i];
-            }
-            number[i].innerText = sum[i];
-            price[i].innerText = sumPrice[i].toLocaleString('en-US');
-        }
-
-        cong[i].onclick = function() {
-            sum[i] = sum[i] + 1;
-            sumPrice[i] = sumPrice[i] + sumPrice_old[i];
-        
-            number[i].innerText = sum[i];
-            price[i].innerText = sumPrice[i].toLocaleString('en-US');
-        }
-    })(i);
-}
-
-
-function addCart(id_product) {
-    var num = document.querySelectorAll('.product__order-number-item-center');
-    var size = document.querySelectorAll('.btn--primary');
-    var priceTotal = document.querySelectorAll('.product__order-sum-price-total');
-    $.ajax({
-        url : "ajax/add.php",
-		type : "post",
-        data : {
-            'id_product' : id_product,
-            'num' : parseInt(num[id_product - 1].innerText),
-            'size' : size[id_product- 1].innerText,
-            'priceTotal' : parseInt(priceTotal[id_product-1].innerText) * 1000
-        },
-        dataType : 'text',
-        success: function(result){
-            // alert("thành công");
-        },
-        error : function(result) {
-            alert("thất bại");      
-        }
-    })
 }

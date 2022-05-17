@@ -48,6 +48,10 @@ html {
     }
 }
 
+.display-block {
+    display: block !important;
+}
+
 /* modal */
 
 .modal {
