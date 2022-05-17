@@ -406,7 +406,7 @@ if(sizeM) {
 }
 
 
-function addCart(id_product) {
+function addCart(id_product, num_modal) {
     var num = document.querySelectorAll('.product__order-number-item-center');
     var size = document.querySelectorAll('.btn--primary');
     var priceTotal = document.querySelectorAll('.product__order-sum-price-total');
@@ -415,9 +415,9 @@ function addCart(id_product) {
 		type : "post",
         data : {
             'id_product' : id_product,
-            'num' : parseInt(num[id_product - 1].innerText),
-            'size' : size[id_product- 1].innerText,
-            'priceTotal' : parseInt(priceTotal[id_product-1].innerText) * 1000
+            'num' : parseInt(num[num_modal].innerText),
+            'size' : size[num_modal].innerText,
+            'priceTotal' : parseInt(priceTotal[num_modal].innerText) * 1000
         },
         dataType : 'text',
         success: function(result){

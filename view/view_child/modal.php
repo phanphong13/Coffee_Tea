@@ -70,7 +70,7 @@
 
                                             <div class="product__order-order">
                                                 
-                                                <button onclick="addCart(<?php echo $products[$i]['id'] ?>)" class="product__order-order-addCart">
+                                                <button onclick="addCart(<?php echo $products[$i]['id'] ?>, <?php echo $i ?>)" class="product__order-order-addCart">
                                                     <a href="" class=" product__order-order-active">
                                                         THÊM VÀO GIỎ HÀNG
                                                     </a>
