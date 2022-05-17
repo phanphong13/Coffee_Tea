@@ -8,11 +8,6 @@
 </head>
 <body>
 
-    <?php 
-    
-        // include "./controller/controller_login.php";
-        // include "./controller/controller_register.php";
-    ?>
     <div class="app">
         <div id="header">
             <div class="header-top">
@@ -204,7 +199,7 @@
                                                     <img src="'. $products[$i]['link_img'] . '" alt="">
                                                 </div>
                                                 <span class="body__product-heading">' . $products[$i]['title'] . '</span>
-                                                <span class="body__product-price">' . $products[$i]['price'] . 'đ</span>
+                                                <span class="body__product-price">' .  number_format($products[$i]['price'],0,'',',') . 'đ</span>
                                                 <button class="body__product-btn">
                                                     <div class="body__product-btn-order">
                                                         ĐẶT HÀNG

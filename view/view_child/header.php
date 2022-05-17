@@ -68,12 +68,12 @@
                                                     </div>
                                                     <div class="header__cart-products-item-body">
                                                         <div class="header__cart-products-item-body-top">
-                                                            <div class="header__cart-products-item-text"><?php echo $product_order[$i]['title']?></div>
+                                                            <div class="header__cart-products-item-text"><?php echo $product_order[$i]['title']."(".$product_order[$i]['size'].")"?></div>
                                                         </div>
                                                         <div class="header__cart-products-item-body-bottom">
                                                             <div class="header__cart-products-item-price">
                                                                 <span class="header__cart-products-item-price-price">
-                                                                    <?php echo $product_order[$i]['price']?>đ
+                                                                    <?php echo number_format($product_order[$i]['price'],0,'',',') ?> đ
                                                                 </span>
                                                                 <span class="header__cart-products-item-price-mul">
                                                                     x

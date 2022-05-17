@@ -142,7 +142,7 @@
                                                     <img src="'. $products[$i]['link_img'] . '" alt="">
                                                 </div>
                                                 <span class="body__product-heading">' . $products[$i]['title'] . '</span>
-                                                <span class="body__product-price">' . $products[$i]['price'] . 'đ</span>
+                                                <span class="body__product-price">' .  number_format($products[$i]['price'],0,'',',') . 'đ</span>
                                                 <button class="body__product-btn">
                                                     <div class="body__product-btn-order">
                                                         ĐẶT HÀNG
@@ -181,6 +181,7 @@
         }
     ?>
 
+    <script src="Assets/JS/add.js"></script>
     <script src="Assets/JS/main.js"></script>
     <script>
         validator('#register-form');

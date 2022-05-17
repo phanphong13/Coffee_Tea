@@ -14,7 +14,7 @@
                                                 <img src="<?php echo $products[$i]['link_img'] ?>" alt="">
                                             </div>
                                             <div class="product__order-price">
-                                                <?php echo $products[$i]['price'] ?>đ
+                                                <?php echo number_format($products[$i]['price'],0,'',',') ?> đ
                                             </div>
                                         </div>
                                     </div>
@@ -49,13 +49,13 @@
                                                 </div>
                                             </div>
 
-                                            <div class="product__order-notes">
+                                            <!-- <div class="product__order-notes">
                                                 <h2 class="product__order-label">
                                                     Ghi chú
                                                 </h2>
                                                 <textarea name="" id="" cols="30" rows="10" class="product__order-notes-note"> 
                                                 </textarea>
-                                            </div>
+                                            </div> -->
 
                                             <div class="product__order-sum">
                                                 <h2 class="product__order-label">
@@ -63,14 +63,15 @@
                                                 </h2>
                                             
                                                 <div class="product__order-sum-price">
-                                                        <?php echo $products[$i]['price'] ?>đ
+                                                        <span class="product__order-sum-price-total"><?php echo number_format($products[$i]['price'],0,'',',') ?></span>
+                                                        <span> đ</span>
                                                 </div>
                                             </div>
 
                                             <div class="product__order-order">
                                                 
-                                                <button class="product__order-order-addCart">
-                                                    <a href="?method=add&id=<?php echo $products[$i]['id'] ?>" class=" product__order-order-active">
+                                                <button onclick="addCart(<?php echo $products[$i]['id'] ?>)" class="product__order-order-addCart">
+                                                    <a href="" class=" product__order-order-active">
                                                         THÊM VÀO GIỎ HÀNG
                                                     </a>
                                                 </button>

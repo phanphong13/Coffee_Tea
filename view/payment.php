@@ -100,12 +100,12 @@
                                         </div>
                                         <div class="header__cart-products-item-body">
                                             <div class="header__cart-products-item-body-top">
-                                                <div class="header__cart-products-item-text"><?php echo $product_order[$i]['title']?></div>
+                                                <div class="header__cart-products-item-text"><?php echo $product_order[$i]['title']."(".$product_order[$i]['size'].")"?></div>
                                             </div>
                                             <div class="header__cart-products-item-body-bottom">
                                                 <div class="header__cart-products-item-price">
                                                     <span class="header__cart-products-item-price-price">
-                                                        <?php echo $product_order[$i]['price']?>đ
+                                                        <?php echo number_format($product_order[$i]['price'],0,'',',')?> đ
                                                     </span>
                                                     <span class="header__cart-products-item-price-mul">
                                                         x
@@ -135,14 +135,14 @@
                         Tổng giá:
                         <span>
                             <?php 
-                                // $sum = 0;
-                                // if ($product_order) {
-                                //     for ($i = 0; $i < count($product_order); $i++) {
-                                //         $sum += $product_order[$i]['price'] * $product_order[$i]['num'];
-                                //     }
-                                // }
-                                if ($sum > 0) echo $sum; else echo 0;
-                            ?>.000 đ
+                                $sum = 0;
+                                if ($product_order) {
+                                    for ($i = 0; $i < count($product_order); $i++) {
+                                        $sum += $product_order[$i]['price_total'];
+                                    }
+                                }
+                                if ($sum > 0) echo number_format($sum,0,'',','); else echo 0;
+                            ?> đ
                             
                         </span>
                         
@@ -159,7 +159,7 @@
         include "view_child/footer.php";
     ?>
 
-    <script src="./main.js"></script>
+    <script src="Assets/JS/main.js"></script>
     <script>
         validator('#payment');
     </script>
