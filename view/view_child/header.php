@@ -91,11 +91,6 @@
                                                 </li>
                                     <?php
                                             }
-                                    ?>
-                                        <a href="?controller=payment" class="header__cart-products-orderAll">
-                                            Đặt hàng
-                                        </a>
-                                    <?php
                                         } else {
                                     ?>
                                         <li class="header__cart-products-item">
@@ -110,7 +105,14 @@
                                     
                                     
                                 </ul>
-                                
+                                <?php 
+                                    if ($product_order) {
+                                ?>
+                                <a href="?controller=payment" class="header__cart-products-orderAll">
+                                    Đặt hàng
+                                </a>
+                                <?php }?>
+
                             </div>
                         </div>
                     </div>
