@@ -421,7 +421,7 @@ function addCart(id_product, num_modal) {
         },
         dataType : 'text',
         success: function(result){
-            // alert("thành công");
+            alert("Thêm vào giỏ hàng thành công");
         },
         error : function(result) {
             alert("thất bại");      
