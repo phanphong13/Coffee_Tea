@@ -96,7 +96,7 @@
                         ?>
                                     <li class="header__cart-products-item">
                                         <div class="header__cart-products-item-img">
-                                            <img src="<?php echo $product_order[$i]['link_img']?>" alt="">
+                                            <img src="Assets/Img/Products/<?php echo $product_order[$i]['link_img']?>" alt="">
                                         </div>
                                         <div class="header__cart-products-item-body">
                                             <div class="header__cart-products-item-body-top">

@@ -1,0 +1,59 @@
+.btn-control {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(127, 36, 230);
+}
+
+.option-heading {
+    text-align: center !important;
+}
+
+.table-icon:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.table-icon:active {
+    color: blue;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.edit-background {
+    border: 1px solid #999;
+}
+
+/* delete btn */
+.delete-product__link {
+    color: rgb(253, 36, 36);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.delete-product__link:hover {
+    color: rgb(167, 16, 16);
+}
+
+.delete-product__link:active {
+    color: rgb(255, 115, 22);
+}
+
+.delete-product {
+    text-align: center;
+}
+
+/* add row */
+
+.add-row-table {
+    color: rgb(228, 138, 21) !important;
+}
+
+.add-row-table:hover {
+    cursor: pointer;
+}
+
+.table-icon-add {
+    font-size: 0.8rem;
+}

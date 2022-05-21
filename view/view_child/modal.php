@@ -11,7 +11,7 @@
                                     <div class="col l-5" >
                                         <div class="product__order-left">
                                             <div class="product__order-img">
-                                                <img src="<?php echo $products[$i]['link_img'] ?>" alt="">
+                                                <img src="Assets/Img/Products/<?php echo $products[$i]['link_img'] ?>" alt="">
                                             </div>
                                             <div class="product__order-price">
                                                 <?php echo number_format($products[$i]['price'],0,'',',') ?> đ

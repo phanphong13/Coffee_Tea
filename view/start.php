@@ -196,7 +196,7 @@
                                         echo '<div class="col l-3 m-6 c-10">
                                             <div class="body__product">
                                                 <div class="body__product-img">
-                                                    <img src="'. $products[$i]['link_img'] . '" alt="">
+                                                    <img src="Assets/Img/Products/'. $products[$i]['link_img'] . '" alt="">
                                                 </div>
                                                 <span class="body__product-heading">' . $products[$i]['title'] . '</span>
                                                 <span class="body__product-price">' .  number_format($products[$i]['price'],0,'',',') . 'đ</span>

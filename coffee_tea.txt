@@ -4,11 +4,15 @@ USE coffee_tea;
 
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(10) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY(id)
 );
+
+INSERT INTO `accounts` (`type`, `name`, `email`, `password`) VALUES
+('Admin', 'Admin', 'admin@gmail.com', '123456');
 
 CREATE TABLE `category` (
   `id` int(11),
@@ -32,46 +36,46 @@ CREATE TABLE `products` (
 );
 
 INSERT INTO `products` (`category_id`, `title`, `link_img`, `price`) VALUES
-(1, 'Caramen Chảy', 'Assets/Img/Products/CF/8e9e15c6b9704d-cafe5mon03.png', 49000),
-(1, 'Cappuchino - Vietnamo', 'Assets/Img/Products/CF/90405a9f256f11-cafe5mon04.png', 44000),
-(1, 'Latte Latte', 'Assets/Img/Products/CF/8a92bb4b37c012-cafe5mon01.png', 44000),
-(1, 'Ngọc Viễn Đông', 'Assets/Img/Products/CF/6e1c837ccd02b3-cafe5mon05.png', 44000),
-(1, 'Phin Bọt Biển', 'Assets/Img/Products/CF/87b1387e4ee409-cafe5mon02.png', 44000),
-(1, 'Phin Sữa Đá', 'Assets/Img/Products/CF/8ebb07f0eeccc1-resize_damdadunggu07.png', 34000),
-(1, 'Phin Đen Đá', 'Assets/Img/Products/CF/4521f4c77fc38a-cf67efb06d5aa504fc4b.png', 34000),
-(2, 'Trà Lài Đác Thơm', 'Assets/Img/Products/Tea/b8f1dd4d4f583c-dacthom.png', 49000),
-(2, 'Hồng Trà Đác Cam', 'Assets/Img/Products/Tea/dae727e03e8092-daccam.png', 68000),
-(2, 'Trà Nhãn - Sen', 'Assets/Img/Products/Tea/7c8006f72742d8-trnhnphclong.png', 49000),
-(2, 'Trà Nhãn - Lài', 'Assets/Img/Products/Tea/005aaeed660473-trnhnphclong.png', 49000),
-(2, 'Trà Vải - Lài', 'Assets/Img/Products/Tea/063555c21c4206-trviliphclong.png', 49000),
-(2, 'Trà Thảo Mộc', 'Assets/Img/Products/Tea/5a893da4cab487-trthomcphclong.png', 54000),
-(2, 'Trà Vải - Sen', 'Assets/Img/Products/Tea/e160951ba017fe-trviliphclong.png', 49000),
-(2, 'Trà Đào Phúc Long', 'Assets/Img/Products/Tea/3937476a64a213-trophclong.png', 54000),
-(2, 'Hồng Trà Sữa', 'Assets/Img/Products/Tea/3c2d50a2c26783-hngtrsaphclongtrosaphclong.png', 44000),
-(2, 'Trà Sữa Phúc Long', 'Assets/Img/Products/Tea/ad7f4b76f4b694-trsaphclongtrlongsaphclong.png', 44000),
-(2, 'Trà Ô Long Dâu', 'Assets/Img/Products/Tea/5318362664d05b-trlongdu.png', 49000),
-(2, 'Trà Ô Long Sữa', 'Assets/Img/Products/Tea/6242c5934eefec-trsaphclongtrlongsaphclong.png', 44000),
-(2, 'Hồng Trà Chanh', 'Assets/Img/Products/Tea/4d247cffb2c4d5-hngtrchanh.png', 39000),
-(2, 'Trà Hoa Hồng', 'Assets/Img/Products/Tea/4eef9292db8810-trhoahngphclong.png', 49000),
-(2, 'Latte Trà Xanh', 'Assets/Img/Products/Tea/d1cd8bafdefe9d-matchalattephclong.png', 44000),
-(2, 'Trà Đào Sữa', 'Assets/Img/Products/Tea/a75db2931ab34c-hngtrsaphclongtrosaphclong.png', 39000),
-(2, 'Trà Xanh Đá Xay', 'Assets/Img/Products/Tea/5db8d7830383fe-trxanhxay.png', 58000),
-(1, 'Sô-Cô-La Xay Cùng Hạnh Nhân Và Espresso', 'Assets/Img/Products/CF/ddca1122a701c3-sclaxaycnghnhnhnvespresso.png', 58000),
-(1, 'Bánh Oreo Xay Cùng Cà Phê Cappuccino', 'Assets/Img/Products/CF/72781119ecd681-sclaxaycnghnhnhnvespresso.png', 58000),
-(1, 'Cà Phê Cappuccino Đá Xay', 'Assets/Img/Products/CF/d12b476cb8261d-cphcappuccinoxay.png', 58000),
-(1, 'Sô-Cô-La Cà Phê Đá Xay', 'Assets/Img/Products/CF/c1043b2fa58b01-sclacphxay.png', 58000),
-(2, 'Trà Đào Đá Xay', 'Assets/Img/Products/Tea/84c7b821bde822-troxay.png', 63000),
-(1, 'Cà Phê Caramel Đá Xay', 'Assets/Img/Products/CF/729626b6440e43-cphcaramelxay.png', 58000),
-(3, 'Táo Và Dâu Ép', 'Assets/Img/Products/ST/16f40311f8a57e-davdupphclong.png', 49000),
-(3, 'Thơm Và Dâu Ép', 'Assets/Img/Products/ST/16f40311f8a57e-davdupphclong.png', 49000),
-(3, 'Táo Ép', 'Assets/Img/Products/ST/1c28e98e3cf766-topphclong.png', 44000),
-(3, 'Dâu Ép', 'Assets/Img/Products/ST/6b1a28971bec00-dup.png', 54000),
-(3, 'Cam Ép', 'Assets/Img/Products/ST/c60abb561e3817-camp.png', 44000),
-(3, 'Dứa Ép', 'Assets/Img/Products/ST/6295905dc9447e-dapphclong.png', 44000),
-(3, 'Sinh Tố Chanh', 'Assets/Img/Products/ST/64bd44180be24c-sinhtchanh.png', 49000),
-(3, 'Vitamin C - Xoài, Cam, Chanh Dây', 'Assets/Img/Products/ST/704d601e52b386-vitamincxoicamchanhdy.png', 54000),
-(3, 'Sinh Tố Dâu', 'Assets/Img/Products/ST/4a625d6564e694-sinhtdu.png', 54000),
-(3, 'Sinh Tố Xoài', 'Assets/Img/Products/ST/25a95ceca023f9-sinhtxoi.png', 54000);
+(1, 'Caramen Chảy', 'CF/8e9e15c6b9704d-cafe5mon03.png', 49000),
+(1, 'Cappuchino - Vietnamo', 'CF/90405a9f256f11-cafe5mon04.png', 44000),
+(1, 'Latte Latte', 'CF/8a92bb4b37c012-cafe5mon01.png', 44000),
+(1, 'Ngọc Viễn Đông', 'CF/6e1c837ccd02b3-cafe5mon05.png', 44000),
+(1, 'Phin Bọt Biển', 'CF/87b1387e4ee409-cafe5mon02.png', 44000),
+(1, 'Phin Sữa Đá', 'CF/8ebb07f0eeccc1-resize_damdadunggu07.png', 34000),
+(1, 'Phin Đen Đá', 'CF/4521f4c77fc38a-cf67efb06d5aa504fc4b.png', 34000),
+(2, 'Trà Lài Đác Thơm', 'Tea/b8f1dd4d4f583c-dacthom.png', 49000),
+(2, 'Hồng Trà Đác Cam', 'Tea/dae727e03e8092-daccam.png', 68000),
+(2, 'Trà Nhãn - Sen', 'Tea/7c8006f72742d8-trnhnphclong.png', 49000),
+(2, 'Trà Nhãn - Lài', 'Tea/005aaeed660473-trnhnphclong.png', 49000),
+(2, 'Trà Vải - Lài', 'Tea/063555c21c4206-trviliphclong.png', 49000),
+(2, 'Trà Thảo Mộc', 'Tea/5a893da4cab487-trthomcphclong.png', 54000),
+(2, 'Trà Vải - Sen', 'Tea/e160951ba017fe-trviliphclong.png', 49000),
+(2, 'Trà Đào Phúc Long', 'Tea/3937476a64a213-trophclong.png', 54000),
+(2, 'Hồng Trà Sữa', 'Tea/3c2d50a2c26783-hngtrsaphclongtrosaphclong.png', 44000),
+(2, 'Trà Sữa Phúc Long', 'Tea/ad7f4b76f4b694-trsaphclongtrlongsaphclong.png', 44000),
+(2, 'Trà Ô Long Dâu', 'Tea/5318362664d05b-trlongdu.png', 49000),
+(2, 'Trà Ô Long Sữa', 'Tea/6242c5934eefec-trsaphclongtrlongsaphclong.png', 44000),
+(2, 'Hồng Trà Chanh', 'Tea/4d247cffb2c4d5-hngtrchanh.png', 39000),
+(2, 'Trà Hoa Hồng', 'Tea/4eef9292db8810-trhoahngphclong.png', 49000),
+(2, 'Latte Trà Xanh', 'Tea/d1cd8bafdefe9d-matchalattephclong.png', 44000),
+(2, 'Trà Đào Sữa', 'Tea/a75db2931ab34c-hngtrsaphclongtrosaphclong.png', 39000),
+(2, 'Trà Xanh Đá Xay', 'Tea/5db8d7830383fe-trxanhxay.png', 58000),
+(1, 'Sô-Cô-La Xay Cùng Hạnh Nhân Và Espresso', 'CF/ddca1122a701c3-sclaxaycnghnhnhnvespresso.png', 58000),
+(1, 'Bánh Oreo Xay Cùng Cà Phê Cappuccino', 'CF/72781119ecd681-sclaxaycnghnhnhnvespresso.png', 58000),
+(1, 'Cà Phê Cappuccino Đá Xay', 'CF/d12b476cb8261d-cphcappuccinoxay.png', 58000),
+(1, 'Sô-Cô-La Cà Phê Đá Xay', 'CF/c1043b2fa58b01-sclacphxay.png', 58000),
+(2, 'Trà Đào Đá Xay', 'Tea/84c7b821bde822-troxay.png', 63000),
+(1, 'Cà Phê Caramel Đá Xay', 'CF/729626b6440e43-cphcaramelxay.png', 58000),
+(3, 'Táo Và Dâu Ép', 'ST/16f40311f8a57e-davdupphclong.png', 49000),
+(3, 'Thơm Và Dâu Ép', 'ST/16f40311f8a57e-davdupphclong.png', 49000),
+(3, 'Táo Ép', 'ST/1c28e98e3cf766-topphclong.png', 44000),
+(3, 'Dâu Ép', 'ST/6b1a28971bec00-dup.png', 54000),
+(3, 'Cam Ép', 'ST/c60abb561e3817-camp.png', 44000),
+(3, 'Dứa Ép', 'ST/6295905dc9447e-dapphclong.png', 44000),
+(3, 'Sinh Tố Chanh', 'ST/64bd44180be24c-sinhtchanh.png', 49000),
+(3, 'Vitamin C - Xoài, Cam, Chanh Dây', 'ST/704d601e52b386-vitamincxoicamchanhdy.png', 54000),
+(3, 'Sinh Tố Dâu', 'ST/4a625d6564e694-sinhtdu.png', 54000),
+(3, 'Sinh Tố Xoài', 'ST/25a95ceca023f9-sinhtxoi.png', 54000);
 
 
 

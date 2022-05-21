@@ -14,6 +14,7 @@
 				if($result === NULL) {
 					$data = array(
 						'name' => $name,
+						'type' => 'User',
 						'email' => $email,
 						'password' => $password,
 					);
@@ -42,6 +43,7 @@
 						 	$_SESSION['name'] = $result[0]['name'];
 							$_SESSION['email'] = $email;
 							$_SESSION['id_account'] = $result[0]['id'];
+							$_SESSION['type'] = $result[0]['type'];
 						header("Location: index.php?controller=home");
 					} else {
 						$alert = "Mật khẩu sai";
