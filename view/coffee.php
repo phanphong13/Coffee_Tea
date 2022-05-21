@@ -118,5 +118,7 @@
 
     </div>
     <script src="Assets/JS/main.js"></script>
+    <script src="Assets/JS/delete.js"></script>
+
 </body>
 </html>

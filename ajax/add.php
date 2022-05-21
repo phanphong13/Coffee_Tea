@@ -12,7 +12,7 @@
 	}
 	$res = $conn->query($sql, true);
 	if($res === false){
-		$result['error'] = "Failed order 1";
+		die("Failed order 1");
 		// die(json_encode($result));
 	}
     $sql_p = "SELECT * FROM `products` WHERE id = {$_POST['id_product']}";
@@ -36,7 +36,7 @@
 			);
 			$x = $conn->insert('orders', $data);
 			if($x === false){
-				$result['error'] = "Failed order 2";
+				die("Failed order 2");
 				// die(json_encode($result));
 			} 
 			
@@ -48,5 +48,6 @@
 			$conn->query($sql_order);
 		} 
 	}
+	die("Thêm vào giỏ hàng thành công")
     // die(json_encode($result));
 ?>

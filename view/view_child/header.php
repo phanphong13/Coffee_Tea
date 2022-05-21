@@ -52,10 +52,10 @@
                             ?>
                             
 
-                            <span class="header__user-info--history">
+                            <a href="?controller=history&id_account=<?php echo $_SESSION['id_account']?>" class="header__user-info--history">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                                 Lịch sử mua hàng
-                            </span> 
+                            </a> 
 
                             <span class="header__user-info--resetPassword">
                                 <i class="fa-solid fa-key"></i>
@@ -164,7 +164,7 @@
                                                                 </span>
                                                             </div>
 
-                                                            <a href="?method=delete&id_order=<?php echo $product_order[$i]['id'] ?>" class="header__cart-products-item-delete">
+                                                            <a href="" onclick="deleteOrder(<?php echo $product_order[$i]['id'] ?>)" class="header__cart-products-item-delete">
                                                                 Xóa
                                                             </a>
                                                             

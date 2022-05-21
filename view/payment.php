@@ -114,7 +114,7 @@
                                                     </span>
                                                 </div>
 
-                                                <a href="?controller=payment&method=delete&id_order=<?php echo $product_order[$i]['id'] ?>" class="header__cart-products-item-delete">
+                                                <a href="" onclick="deleteOrder(<?php echo $product_order[$i]['id'] ?>)" class="header__cart-products-item-delete">
                                                     Xóa
                                                 </a>
                                                 
@@ -160,6 +160,8 @@
     ?>
 
     <script src="Assets/JS/main.js"></script>
+    <script src="Assets/JS/delete.js"></script>
+
     <script>
         validator('#payment');
     </script>

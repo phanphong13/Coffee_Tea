@@ -366,8 +366,9 @@ if(sizeM) {
 
 function addCart(id_product, num_modal) {
     var num = document.querySelectorAll('.product__order-number-item-center');
-    var size = document.querySelectorAll('.btn--primary');
+    var size = document.querySelectorAll('.btn--primary.btn--size-s');
     var priceTotal = document.querySelectorAll('.product__order-sum-price-total');
+    console.log(size[num_modal].innerText);
     $.ajax({
         url : "ajax/add.php",
 		type : "post",
@@ -379,7 +380,7 @@ function addCart(id_product, num_modal) {
         },
         dataType : 'text',
         success: function(result){
-            alert("Thêm vào giỏ hàng thành công");
+            alert(result);
         },
         error : function(result) {
             alert("thất bại");      
