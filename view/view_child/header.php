@@ -20,7 +20,7 @@
                 </span>
                 <div class="header__user-img">
                     <i class="fa-solid fa-circle-user"></i>
-                    <div class="header__user-logout">
+                    <!-- <div class="header__user-logout">
                         <a href="index.php?controller=start" class="header__user-logout-link">
                             <div class="header__user-logout-icon">
                                 <i class="fa-solid fa-right-from-bracket"></i>
@@ -30,8 +30,90 @@
                             </div>
                         </a>
 
+                    </div> -->
+                    <div class="header__user-info">
+                            <span class="header__user-info--email">
+                            <?php 
+                                if (isset($_SESSION['email'])) {
+                                    echo $_SESSION['email'];
+                                }
+                            ?>
+                            </span>
+                            
+                            <?php 
+                                if (isset($_SESSION['type']) && $_SESSION['type'] === 'Admin') {
+                                    ?>
+                            <a href="?controller=user" class="header__user-info--setting">
+                                <i class="fa-solid fa-gear"></i>
+                                Quản lý cửa hàng
+                            </a>
+                                    <?php
+                                }
+                            ?>
+                            
+
+                            <span class="header__user-info--history">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                Lịch sử mua hàng
+                            </span> 
+
+                            <span class="header__user-info--resetPassword">
+                                <i class="fa-solid fa-key"></i>
+                                Đổi mật khẩu
+                            </span>
+
+                            <div for="" class="modal__overlay-login"></div>
+
+                            <!-- Form resetPassword -->
+                            <div class="modal__resetPassword">
+                                <div class="modal__body">
+                                    <div class="auth-form">
+                                        <div class="auth-form__container">
+
+                                            <form action="" method="post" id="resetPassword-form">
+                                                
+                                                <div class="auth-form__header">
+                                                    <h3 class="auth-form__heading">
+                                                        Đổi mật khẩu
+                                                    </h3>
+                                                    
+                                                </div>
+                            
+                                                <div class="auth-form__form">
+                                                    <div class="auth-form__group">
+                                                        <label for="" class="auth-form__title">Nhập mật khẩu hiện tại</label>
+                                                        <input required type="password" name="password__old" class="auth-form__input" rules="required" required placeholder="Nhập mật khẩu hiện tại của bạn" autocomplete="on">
+                                                        <span class="auth-form__error"></span>
+                                                    </div>
+                                                    <div class="auth-form__group">
+                                                        <label for="" class="auth-form__title">Nhập mật khẩu mới</label>
+                                                        <input required type="password" name="password" class="auth-form__input" rules="required|min:6" required placeholder="Nhập mật khẩu mới của bạn" autocomplete="on">
+                                                        <span class="auth-form__error"></span>
+                                                    </div>
+                                                    <div class="auth-form__group">
+                                                        <label for="" class="auth-form__title">Nhập lại mật khẩu</label>
+                                                        <input required type="password" name="passwordX2" class="auth-form__input" rules="required|isConfirm" required placeholder="Nhập lại mật khẩu của bạn" autocomplete="on">
+                                                        <span class="auth-form__error"></span>
+                                                    </div>
+                                                </div>
+                            
+                                                <div class="auth-form__controls">
+                                                    <button name="reset" class="btn btn--primary" style = "margin-bottom: 20px;">XÁC NHẬN</button>
+                                                </div>
+                                                
+                                            </form>
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div onclick="logout()" class="header__user-info--logout">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Đăng xuất
+                            </div>
+                        </div>
                     </div>
-                </div>
             </div>
 
             <div class="header__cart">

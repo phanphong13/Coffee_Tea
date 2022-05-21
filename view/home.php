@@ -186,6 +186,7 @@
     <script>
         validator('#register-form');
         validator('#login-form');
+        validator('#resetPassword-form');
     </script>
 </body>
 </html>

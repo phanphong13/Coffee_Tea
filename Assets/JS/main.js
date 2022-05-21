@@ -13,13 +13,13 @@ setInterval(function() {
 // mo logout
 
 var btnUser = document.querySelector('.header__user-img');
-var userLogout = document.querySelector('.header__user-logout');
+var userInfo = document.querySelector('.header__user-info');
 if(btnUser) {
-    userLogout.addEventListener('click', function(event) {
+    userInfo.addEventListener('click', function(event) {
         event.stopPropagation();
     })
     btnUser.addEventListener('click', function() {
-        userLogout.classList.toggle("display-block");
+        userInfo.classList.toggle("display-block");
     })
     
 }
@@ -38,76 +38,6 @@ if(btnCart) {
     })
     
 }
-
-// order
-// var number = document.querySelectorAll('.product__order-number-item-center');
-// var tru = document.querySelectorAll('.product__order-number-item-left');
-// var cong = document.querySelectorAll('.product__order-number-item-right');
-// var price = document.querySelectorAll('.product__order-sum-price');
-
-
-
-// var sum = new Array();
-// var sumPrice = new Array();
-// var sumPrice_old = new Array();
-// if(number) {
-//     for (var i = 0; i < number.length; i++ ) (function(i){ 
-//         sum[i] = parseInt(number[i].innerText, 10);
-//     })(i);
-// }
-
-// if(price) {
-//     for (var i = 0; i < price.length; i++ ) (function(i){ 
-//         sumPrice[i] = parseInt(price[i].innerText);
-//         sumPrice_old[i] = parseInt(price[i].innerText);
-
-//     })(i);
-// }
-
-
-// var sizeM = document.querySelectorAll('.product__order-size-M');
-// var sizeL = document.querySelectorAll('.product__order-size-L');
-
-// if(sizeM) {
-//     for (var i = 0; i < sizeM.length; i++ ) (function(i){ 
-//         sizeM[i].onclick = function() {
-//             if (sizeL[i].classList.contains('btn--primary')) {
-//                 sizeL[i].classList.remove('btn--primary');
-//                 sizeM[i].classList.add('btn--primary');
-//                 sumPrice_old[i] -= 10;
-//                 sumPrice[i] = sumPrice[i] - 10 * sum[i];
-//                 price[i].innerText = sumPrice[i] + '.000 đ';
-//             }
-//         }
-
-//         sizeL[i].onclick = function() {
-//             if (sizeM[i].classList.contains('btn--primary')) {
-//                 sizeM[i].classList.remove('btn--primary');
-//                 sizeL[i].classList.add('btn--primary');
-//                 sumPrice_old[i] += 10;
-//                 sumPrice[i] = sumPrice[i] + 10 * sum[i];
-//                 price[i].innerText = sumPrice[i] + '.000 đ';
-//             }
-//         }
-
-//         tru[i].onclick = function() {
-//             if (sum[i]>0) {
-//                 sum[i] = sum[i]-1;
-//                 sumPrice[i] = sumPrice[i] - sumPrice_old[i];
-//             }
-//             number[i].innerText = sum[i];
-//             price[i].innerText = sumPrice[i] + '.000 đ';
-//         }
-
-//         cong[i].onclick = function() {
-//             sum[i] = sum[i] + 1;
-//             sumPrice[i] = sumPrice[i] + sumPrice_old[i];
-        
-//             number[i].innerText = sum[i];
-//             price[i].innerText = sumPrice[i] + '.000 đ';
-//         }
-//     })(i);
-// }
 
 
 // btn-order
@@ -178,12 +108,40 @@ if (navRegister) {
     }
 }
 
+var navResetPassword = document.querySelector('.header__user-info--resetPassword');
+var modal__resetPassword = document.querySelector('.modal__resetPassword');
+
+// mo resetPassword 
+
+if (navResetPassword) {
+    navResetPassword.addEventListener('click', function() {
+        modal__overlay__login.setAttribute("style", "display: block;");
+        modal__resetPassword.setAttribute("style", "display: block;");
+    });
+
+    navResetPassword.addEventListener('click', function(event) {
+        event.stopPropagation();
+    })
+}
+
 // click overlay => out
 if (modal__overlay__login) {
     modal__overlay__login.onclick = function() {
-        modal__overlay__login.setAttribute("style", "display: none;");
-        modal__login.setAttribute("style", "display: none;");
-        modal__register.setAttribute("style", "display: none;");
+        if (modal__overlay__login) {
+            modal__overlay__login.setAttribute("style", "display: none;");
+        }
+        if (modal__login) {
+            modal__login.setAttribute("style", "display: none;");
+        }
+        if (modal__register) {
+            modal__register.setAttribute("style", "display: none;");
+        }
+        if (modal__resetPassword) {
+            modal__resetPassword.setAttribute("style", "display: none;");
+        }
+        if (userInfo) {
+            userInfo.classList.remove("display-block");
+        }
     }
 }
 
@@ -250,7 +208,7 @@ function validator(formSelector) {
             }
         },
         isConfirm: function(value) {
-            var registerIsConfirmPassword = document.querySelector('#register-form [name=password]').value;
+            var registerIsConfirmPassword = document.querySelector('[name=password]').value;
             return value === registerIsConfirmPassword ? undefined : 'Nhập lại mật khẩu không chính khác';
         }
     }
@@ -425,6 +383,20 @@ function addCart(id_product, num_modal) {
         },
         error : function(result) {
             alert("thất bại");      
+        }
+    })
+}
+
+// click => out
+var container = document.getElementById("container");
+if (container) {
+    container.addEventListener('click', function() {
+        if (userInfo) {
+            userInfo.classList.remove("display-block");
+        }
+
+        if (cartList) {
+            cartList.classList.remove("display-block");
         }
     })
 }

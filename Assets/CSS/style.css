@@ -50,7 +50,6 @@
 }
 
 .header__user-img {
-    text-align: center;
     font-size: 3rem;
     color: var(--primary-color);
     cursor: pointer;
@@ -92,6 +91,83 @@
     box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
     display: none;
     animation: fadeIn linear 0.3s;
+}
+
+.header__user-info {
+    position: absolute;
+    width: 300px;
+    top: 130%;
+    right: -18px;
+    background-color: #fff;
+    box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
+    border-radius: 4px;
+    transform-origin: top right;
+    animation: ShowTopRight ease 0.3s;
+    display: none;
+}
+
+.header__user-info::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    height: 15px;
+    width: 100%;
+}
+
+
+.header__user-info::after {
+    position: absolute;
+    content: "";
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 12px solid #fff;
+}
+
+.header__user-info--email {
+    display: block;
+    font-size: 1.4rem;
+    padding: 15px 10px;
+
+}
+
+.header__user-info--resetPassword,
+.header__user-info--setting,
+.header__user-info--history {
+    display: block;
+    font-size: 1.4rem;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.header__user-info--logout {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    padding: 15px 10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.header__user-info--resetPassword:hover {
+    background-color: #e3e3e3
+}
+
+.header__user-info--history:hover {
+    background-color: #e3e3e3
+}
+
+.header__user-info--setting:hover {
+    background-color: #e3e3e3
+}
+
+.header__user-info--logout:hover {
+    background-color: #e3e3e3
 }
 
 
@@ -248,7 +324,8 @@
     box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
     border-radius: 4px;
     display: none;
-    animation: fadeIn linear 0.3s;
+    transform-origin: top right;
+    animation: ShowTopRight ease 0.3s;
 }
 
 
@@ -265,6 +342,7 @@
     margin: 0;
     max-height: 50vh;
     overflow-y: auto;
+    overflow: hidden;
 }
 
 .header__cart-products-item {
@@ -617,6 +695,16 @@ input[name = "r"] {
 }
 
 /* Authen modal */
+
+.modal__resetPassword {
+    position: fixed;
+    width: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+}
 
 .modal__register {
     position: fixed;
