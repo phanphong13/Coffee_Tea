@@ -1,7 +1,9 @@
 <div id="header">
     <div class="header-top">
         <div class="h-left">
-            <img src="Assets/Img/Header/delivery.png" alt="">
+            <div class="h-left--logo">
+                <img src="Assets/Img/Header/delivery.png" alt="">
+            </div>
         </div>
         <div class="h-center">
             <a href="" class="h-center-logo" >

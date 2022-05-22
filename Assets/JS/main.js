@@ -369,3 +369,14 @@ if (container) {
         }
     })
 }
+
+// shake
+
+logo__animation = document.querySelector('.h-left--logo');
+
+setInterval(function() {
+    logo__animation.classList.add('shake');
+    setTimeout(function() {
+        logo__animation.classList.remove('shake');
+    }, 500)
+}, 2000)

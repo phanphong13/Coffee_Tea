@@ -14,6 +14,19 @@
     box-sizing: inherit;
 }
 
+:root ::-webkit-scrollbar {
+    width: 6px;
+}
+
+:root ::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+:root ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#fcc404, #fcb404);
+    border-radius: 100rem;
+}
+
 html {
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -48,7 +61,7 @@ html {
     }
 }
 
-@keyframes shakeCart {
+@keyframes shake {
     25% {
       transform:translateX(6px)
     }
@@ -153,5 +166,25 @@ html {
 .btn.btn--size-s {
     height: 32px;
     font-size: 12px
+}
+
+#backtop {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+}
+
+#backtop:hover {
+    background-color: #094e2a;
+    cursor: pointer;
 }
 

@@ -12,7 +12,9 @@
         <div id="header">
             <div class="header-top">
                 <div class="h-left">
-                    <img src="Assets/Img/Header/delivery.png" alt="">
+                    <div class="h-left--logo">
+                        <img src="Assets/Img/Header/delivery.png" alt="">
+                    </div>
                 </div>
                 <div class="h-center">
                     <a href="" class="h-center-logo" >
@@ -216,6 +218,9 @@
         ?>
 
     </div>
+    <div id="backtop">
+        <i class="fa-solid fa-arrow-up-long"></i>
+    </div>
     
     <script src="Assets/JS/main.js"></script>
     <script src="Assets/JS/filter.js"></script>
@@ -223,6 +228,23 @@
         validator('#register-form');
         validator('#login-form');
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     <script>
+         $(document).ready(function() {
+             $(window).scroll(function() {
+                 if($(this).scrollTop()) {
+                     $('#backtop').fadeIn();
+                 } else {
+                     $('#backtop').fadeOut();
+                 }
+             });
+             $('#backtop').click(function() {
+                 $('html, body').animate({
+                     scrollTop: 0
+                }, 400);
+             })
+         })
+     </script>
 </body>
 </html>
 

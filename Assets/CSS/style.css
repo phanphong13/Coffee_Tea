@@ -19,8 +19,12 @@
 }
 
 .h-left {
-    margin: 20px 70px 10px;
+    margin: 10px 70px 10px;
     cursor: pointer;
+}
+
+.shake {
+    animation: shake .4s ease-in-out forwards;
 }
 
 .h-center {
@@ -342,7 +346,6 @@
     margin: 0;
     max-height: 50vh;
     overflow-y: auto;
-    overflow: hidden;
 }
 
 .header__cart-products-item {
