@@ -20,6 +20,8 @@ if(btnUser) {
     })
     btnUser.addEventListener('click', function() {
         userInfo.classList.toggle("display-block");
+        cartList.classList.remove("display-block");
+
     })
     
 }
@@ -35,45 +37,11 @@ if(btnCart) {
     })
     btnCart.addEventListener('click', function() {
         cartList.classList.toggle("display-block");
+        userInfo.classList.remove("display-block");
+
     })
     
 }
-
-
-// btn-order
-var productBtnOrders = document.querySelectorAll('.body__product-btn-order');
-var overlayOrders = document.querySelectorAll('.modal__overlay');
-var modalOrders = document.querySelectorAll('.modal');
-
-var btnCloses = document.querySelectorAll('.product__order-info-icon');
-
-if(productBtnOrders) {
-    for (var i = 0; i < productBtnOrders.length; i++ ) (function(i){ 
-        productBtnOrders[i].onclick = function() {
-            overlayOrders[i].style.display = 'block';
-            modalOrders[i].style.display = 'block';
-        }
-      })(i);
-}
-
-if (overlayOrders) {
-    for (var i = 0; i < overlayOrders.length; i++ ) (function(i) {
-        overlayOrders[i].onclick = function() {
-            overlayOrders[i].style.display = 'none';
-            modalOrders[i].style.display = 'none';
-        }
-    })(i);
-}
-
-if (btnCloses) {
-    for (var i = 0; i < btnCloses.length; i++ ) (function(i) {
-        btnCloses[i].onclick = function() {
-            overlayOrders[i].style.display = 'none';
-            modalOrders[i].style.display = 'none';
-        }
-    })(i);
-}
-
 
 // switch btn dang ki dang nhap
 

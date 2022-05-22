@@ -69,70 +69,57 @@
                                 </label>
 
                                 <ul class="category__list">
-                                    <?php 
-                                        if (isset($_GET['id_category'])) {
-                                            $id_category = $_GET['id_category'];
-                                        }
-                                    ?>
+
                                     <li class="category__item">
-                                        <a href="index.php?controller=start" class="category__link <?php if (!isset($id_category)) echo "category__link-active" ?>">Tất cả</a>
+                                        <div cate = "0" class="category__link">Tất cả</div>
                                     </li>
                                     
                                     <li class="category__item">
-                                        <a href="?id_category=1" class="category__link <?php if (isset($id_category) && $id_category == 1) echo "category__link-active" ?> ">Cà phê</a>
+                                        <div cate = "1" class="category__link">Cà phê</div>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=2" class="category__link <?php if (isset($id_category) && $id_category == 2) echo "category__link-active" ?> ">Trà Sữa & Trà Chanh</a>
+                                        <div cate = "2" class="category__link">Trà Sữa & Trà Chanh</div>
                                     </li>
                                     <li class="category__item">
-                                        <a href="?id_category=3" class="category__link <?php if (isset($id_category) && $id_category == 3) echo "category__link-active" ?> ">Nước Trái Cây</a>
+                                        <div cate = "3" class="category__link">Nước Trái Cây</div>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="col l-10 m-9 c-10">
                             <div class="body-top">
-                                <?php 
-                                    if (isset($_GET['sort'])) {
-                                        $sort = $_GET['sort'];
-                                    }
-                                    if (isset($_GET['search'])) {
-                                        $search = $_GET['search'];
-                                    }
-                                ?>
-                                <form action="" method="GET" class = "body-top-form">
-                                    <div class="body-xs body-xs-left">
-                                        <label class="body-xs__header">
-                                            Theo giá
-                                        </label>
+                            <div class="body-xs body-xs-left">
+                                <label class="body-xs__header">
+                                    Theo giá
+                                </label>
 
-                                        <select id="body-xs-price" class="body-xs__select" name="sort"> <!-- add name-->
-                                            <option value="">Không lựa chọn</option>
-                                            <option <?php if (isset($sort) && $sort == 'ASC') echo "selected=\"selected\""; ?> value="ASC">Từ thấp đến cao</option>
-                                            <option <?php if (isset($sort) && $sort == 'DESC') echo "selected=\"selected\""; ?> value="DESC">Từ cao đến thấp</option>
-                                        </select>
+                                <select id="body-xs-price" class="body-xs__select sort_product" name="sort"> <!-- add name-->
+                                    <option value="">Không lựa chọn</option>
+                                    <option value="ASC">Từ thấp đến cao</option>
+                                    <option value="DESC">Từ cao đến thấp</option>
+                                </select>
 
-                                    </div>
-                                    
-                                    <div class="body-xs">
-                                        <lable class="body-xs__header">
-                                            Tìm kiếm
-                                        </lable>
-                                        <div class="body-xs__input">
-                                            <input type="text" name="search" class="body-xs__input-input" value="<?php if (isset($search)) echo $search?>"placeholder="Tìm kiếm"> <!--type submit-->
-                                            <button class="body-xs__input-btn">
-                                                <div class="body-xs__input-icon">
-                                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                                </div>
-                                            </button>
-                                        </div>
-                                        
-                                    </div>
-                                </form>
                             </div>
                             
-                            <div class="row">
+                            <div class="body-xs">
+                                <lable class="body-xs__header">
+                                    Tìm kiếm
+                                </lable>
+                                <div class="body-xs__input">
+                                    <input type="text" name="search" class="body-xs__input-input" id="search_product" placeholder="Tìm kiếm"> <!--type submit-->
+                                    <button class="body-xs__input-btn btn-search-product">
+                                        <div class="body-xs__input-icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                            </div>
+                            
+                            <div class="row products">
                                 <?php 
+
                                     if (isset($products)) {
                                     for ($i = 0; $i < count($products); $i++) {
                 
@@ -144,12 +131,13 @@
                                                 <span class="body__product-heading">' . $products[$i]['title'] . '</span>
                                                 <span class="body__product-price">' .  number_format($products[$i]['price'],0,'',',') . 'đ</span>
                                                 <button class="body__product-btn">
-                                                    <div class="body__product-btn-order">
+                                                    <div class="body__product-btn-order"  stt = '.$products[$i]['id'].'>
                                                         ĐẶT HÀNG
                                                     </div>
                                                 </button>
                                             </div>
                                         </div>';
+                                        // includeModal($products, $i);
 
                                     }
                                     } else {
@@ -183,6 +171,7 @@
 
     <script src="Assets/JS/main.js"></script>
     <script src="Assets/JS/delete.js"></script>
+    <script src="Assets/JS/filter.js"></script>
 
     <script>
         validator('#register-form');
